@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    {% load static %}
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/en/5/56/Logo-jiit.png"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> COLORECTAL CANCER DATABASE </title>
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+}
+
+.navbar {
+  display: flex;
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.navbar input#menu-toggler {
+  display: none;
+}
+
+.navbar #hamburger-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .all-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .all-links li {
+  position: relative;
+  list-style: none;
+}
+
+.navbar .logo a {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+header a, footer a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #fff;
+  height: 100%;
+  padding: 20px 0;
+  display: inline-block;
+}
+
+header a:hover, footer a:hover {
+  color: #ddd;
+}
+
+.homepage {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% );
+  background-position: center 65%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.homepage .content {
+  display: flex;
+  height: 85%;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepage .content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.homepage .content .text {
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content a {
+  color: #000;
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #fff;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.3);
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0 0;
+}
+
+section h2 {
+  font-size: 2rem;
+}
+
+section > p {
+  text-align: center;
+}
+
+section .cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-top: 50px;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+section.about {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.about .company-info {
+  margin-top: 30px;
+}
+
+.about h3 {
+  margin: 30px 0 10px;
+}
+
+.about .team {
+  text-align: left;
+  width: 100%;
+}
+
+.about .team ul {
+  padding-left: 20px;
+}
+
+section .cards .card {
+  background: #fff;
+  padding: 40px 15px;
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 40px;
+  width: calc(100% / 3 - 30px);
+  text-align: center;
+}
+
+.portfolio .cards .card {
+  padding: 0 0 20px;
+}
+
+.services .card img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.portfolio .card img {
+  width: 100%;
+  padding-bottom: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.cards .card p {
+  padding: 0 15px;
+  margin-top: 5px;
+}
+
+.about .row {
+  padding: 0 10px;
+}
+
+.contact .row {
+  margin: 60px 0 90px;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact .row .col {
+  padding: 0 10px;
+  width: calc(100% / 2 - 50px);
+}
+
+.contact .col p {
+  margin-bottom: 10px;
+}
+
+.contact .col p i {
+  color: #7a7a7a;
+  margin-right: 10px;
+}
+
+.contact form input {
+  height: 45px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #bfbfbf;
+}
+
+.contact form textarea {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  height: 150px;
+  outline: none;
+  resize: vertical;
+  border: 1px solid #bfbfbf;
+}
+
+.contact form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #333;
+  transition: 0.2s ease;
+}
+
+.contact form button:hover {
+  background: #525252;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+  padding: 20px 0;
+}
+
+footer div {
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer span {
+  color: #fff;
+}
+
+footer a {
+  padding: 0;
+}
+
+@media screen and (max-width: 860px) {
+  .navbar .all-links {
+    position: fixed;
+    left: -100%;
+    width: 300px;
+    display: block;
+    height: 100vh;
+    top: 75px;
+    background: #333;
+    transition: left 0.3s ease;
+  }
+
+  .navbar #menu-toggler:checked~.all-links {
+    left: 0;
+  }
+
+  .navbar .all-links li {
+    font-size: 18px;
+  }
+
+  .navbar #hamburger-btn {
+    display: block;
+  }
+
+  section > p {
+    text-align: center;
+  }
+
+  section .cards .card {
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 30px;
+  }
+
+  .homepage .content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .homepage .content .text {
+    font-size: 17px;
+  }
+
+  .content a {
+    font-size: 17px;
+    padding: 9px 20px;
+  }
+
+  .contact .row {
+    flex-direction: column;
+  }
+
+  .contact .row .col {
+    width: 100%;
+  }
+
+  .contact .row .col:last-child {
+    margin-top: 40px;
+  }
+
+  footer a {
+    height: 0;
+  }
+}
+
+.dropdown {
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: transparent;
+  }
+  
+  .show {
+    display: block;
+  }
+
+@media screen and (max-width: 560px) {
+  section .cards .card {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+</style>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">CRCMPDDB</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </label>
+        <ul class="all-links">
+          <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()"><a href="home.html">Home</a>
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="about.html">About</a>
+    <a href="stages.html"> Stages</a>
+    <a href="factors.html">Factors</a>
+    <a href="medical.html">Medical Conditions</a>
+    <a href="role.html">Role of Medicinal Plants</a>
+  </div>
+</div> 
+<li><a href="family.html">CRC Medicinal plant <br> & its basic taxonomy</a></li>
+<li><a href="genome.html">CRC_Genome</a></li>
+<li><a href="drug.html">Natural Drugs</a></li>
+<li><a href="metabolite.html">Medicinal plant <br> & its metabolites </a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+</header>
+
+    <section class="about" id="about"><br><br>
+      <h2><u>Stages of Colorectal Cancer</u></h2><br>
+      <p style="font-size: 20px; text-align: justify"><b>How is Colorectal Cancer Staged ?</b><br><br>
+        The term "staging" refers to a method of describing the location of the cancer, its spread, and whether it has spread to other areas of the body.To determine the stage of the cancer, doctors perform diagnostic tests.  Knowing the stage aids the doctor in recommending the best course of action and can assist in determining the prognosis, or likelihood of recovery, for a patient. 
+        <br>Stage 0 (very early cancer) refers to the earliest stage of colorectal cancer. Stages I (1) through IV (4) follow. The less the number, generally speaking, the less the cancer has spread. A higher number,like stage IV,denotes that the cancer has spread more widely. A lower stage is indicated by an earlier letter within a stage.
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/layers_of_colon_wall.jpeg' %}">
+      </p>
+    </section>
+
+    <section class="about" id="about"><br><br>
+        <h2><u> TNM Staging System</u></h2><br>
+        <ul style="font-size: 20px; text-align: justify">The American Joint Committee on Cancer(AJCC) TNM system is the most popular staging method for colorectal cancer and is based on 3 important pieces of data:<br><br>
+            <li><b><i>Tumor(T) : </i></b><i>The tumor's size or extent :</i> How much of the colon or rectum wall has the cancer invaded? From the inner to the outermost of these layers are:<br>
+                1. The mucosa, which is the layer where almost all colorectal cancers begin. This includes the muscularis mucosa, a thin layer of muscle.<br>
+                2. The submucosa, or fibrous tissue, lies beneath this layer of muscle.<br>
+                3. Muscularis propria, a substantial layer of muscle.<br>
+                4. The rectum is not covered by the serosa and subserosa, the thin, outermost layers of connective tissue that cover the majority of the colon.<br>
+            </li>
+            <li><b><i>Nodes(N) :</i> </b><i>The invasion of close-by lymph nodes (N):</i> Have lymph nodes close by been affected by the cancer?</li>
+            <li><b><i>Metastasis(M) : </i></b><i>The metastatic spread (M) to distant sites:</i> Have distant lymph nodes or distant organs like the liver or lungs been affected by the cancer?</li>
+        </ul><br><br>
+        <ul style="font-size: 20px; text-align: justify"><b><u>>Tumor(T)</u> : </b>The depth of the primary tumor's invasion of the bowel lining is indicated by the letter or number (0–4) followed by the letter "T" in the TNM system. 
+            <br>
+              <li><b>TX : </b>It is not possible to evaluate the primary tumour.</li>
+              <li><b><i>T0(T zero) : </i></b>In the colon or rectum, there is no indication of cancer (T0).</li>
+              <li><b>Tis : </b>Carcinoma in situ (also known as cancer in situ) is referred to as this. Only the top layers of the colon or rectum's lining, known as the epithelium or lamina propria, contain cancer cells.</li>
+              <li><b>T1 : </b>The submucosa, or tissue layer below the mucosa or lining of the colon, has been invaded by the tumour.</li>
+              <li><b>T2 : </b>The muscularis propria, a deeper, thicker layer of muscle that contracts to move the contents of the intestines, has become infiltrated by the tumour.</li>
+              <li><b>T3 : </b> Either the tumour has spread into the tissues surrounding the colon or rectum, or it has penetrated the muscularis propria and entered the subserosa, a thin layer of connective tissue that lies beneath the outer layer of some portions of the large intestine.</li>
+              <li><b>T4a : </b>The tumour has penetrated all of the colon's layers by the time it reached the visceral peritoneum's surface.</li>
+              <li><b>T4b : </b>The tumour has encroached upon or become affixed to additional organs or structures.</li>
+             </ul> 
+            <br><br>
+             <ul style="font-size: 20px; text-align: justify"><b>Node(N) :</b><br>>>The lymph nodes are represented by the "N" in the TNM system. All over the body, there are tiny, bean-shaped organs called lymph nodes. As a component of the immune system, lymph nodes assist the body in battling infections. Regional lymph nodes are lymph nodes that are close to the colon and rectum. All other lymph nodes are dispersed lymph nodes that are located throughout the body.
+                <br>
+                  <li><b>NX : </b>No assessment of the local lymph nodes is possible.</li>
+                  <li><b>N0(N zero) : </b>There is no lymph node spread in the area.</li>
+                  <li><b>N1a : </b>One local lymph node has been found to contain tumour cells.</li>
+                  <li><b>N1b : </b>Two to three local lymph nodes contain tumour cells.</li>
+                  <li><b>N1c : </b>The structures close to the colon contain nodules made of tumour cells, but they don't seem to be lymph nodes.</li>
+                  <li><b>N2a : </b>Between four and six local lymph nodes contain tumour cells.</li>
+                  <li><b>N2b : </b>At least seven local lymph nodes have tumour cells present.</li>
+            </ul> 
+            <br><br>
+            <ul style="font-size: 20px; text-align: justify"><b>Metastasis(M) :</b><br>>>Cancer that has metastasized to additional organs, such as the liver or lungs, is denoted by the letter "M" in the TNM system. Metastasis is what causes this.
+                    <br>
+                      <li><b>M0 (M zero) : </b>No distant organ has been affected by the disease.</li>
+                      <li><b>M1a : </b>Beyond the colon or rectum, the cancer has spread to one additional area of the body.</li>
+                      <li><b>M1b : </b>A part of the body other than the colon or rectum has been affected by the cancer.</li>
+                      <li><b>M1c : </b>The surface of the peritoneum has been affected by the cancer.</li>
+            </ul> 
+            <br><br>
+            <ul style="font-size: 20px; text-align: justify"><b>Grade(G) :</b><br>>>The grade(G) of colorectal cancer is another term used by doctors. The grade reflects how similar cancer cells are to normal cells under a microscope.
+                <br>The medical professional contrasts healthy and cancerous tissue. Many different cell types are typically gathered together in healthy tissue. A "low-grade tumour" or "differentiated tumour" is referred to when a cancer has different cell groupings and resembles healthy tissue in appearance. "Poorly differentiated" or a "high-grade tumour" is the term used when cancerous tissue stands out significantly from healthy tissue. The doctor's ability to foresee the cancer's propensity to spread quickly may be aided by the cancer's grade. The prognosis is typically improved by the tumor's grade.
+                <br>
+                  <li><b>GX : </b>It is impossible to determine the tumour grade.</li>
+                  <li><b>G1 : </b>The cells, which are referred to as well differentiated, resemble healthy cells more.</li>
+                  <li><b>G2 : </b> The cells, which are referred to as moderately differentiated, resemble healthy cells in some ways.</li>
+                  <li><b>G3 : </b>The cells, which are referred to as poorly differentiated, appear less like healthy cells.</li>
+                  <li><b>G4 : </b> The undifferentiated cells, which hardly resemble healthy cells, are described as such.</li>
+            </ul> 
+    </section>
+
+    <section class="about" id="about"><br><br>
+        <h2><u>Stage Groups for Colorectral Cancer </u></h2><br>
+        <p style="font-size: 20px; text-align: justify"><b><i>Stage 0 : </i></b><br>>>Early stages of the cancer are present. Intramucosal carcinoma (Tis), carcinoma in situ, and carcinoma in situ are additional terms for this stage. The mucosa, or inner lining, of the colon or rectum, is the only place where cancerous cells can be found.
+            <br>>>Grouping Stages are - 
+            <br>1. Tis 
+            <br>2. N0 
+            <br>3. M0<br>
+            <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage0.jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage I :</i></b><br>>>In addition to potentially spreading into the muscularis propria (T2), the cancer has penetrated the muscularis mucosa into the submucosa (T1). Both nearby and far-off lymph nodes have not been affected (N0 and M0, respectively).
+            <br>>>Grouping Stages are - 
+            <br>1. T1 or T2 
+            <br>2. N0 
+            <br>3. M0<br>
+            <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage1.jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIA :</i></b><br>>>The colon or rectum's outermost layers have been penetrated by the cancer, but not through them (T3). Organs close by have not been affected. Neither nearby lymph nodes nor distant sites have been affected (N0, M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T3 
+        <br>2. N0 
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage2a.jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIB :</i></b><br>>>The visceral peritoneum, which lines the inside of the abdomen, is where the cancer has penetrated through the layers of muscle, but it has not spread to any other nearby tissues or organs (T4a). Neither nearby lymph nodes nor distant sites have yet been affected (N0, M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T4a 
+        <br>2. N0 
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage2b.jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIC :</i></b><br>>>The colon or rectum wall has been penetrated by the cancer, which has since attached itself to nearby tissues or organs or grown into them (T4b). Both nearby lymph nodes and far-off locations have not yet been affected (N0 and M0, respectively).
+        <br>>>Grouping Stages are - 
+        <br>1. T4b 
+        <br>2. N0 
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage2c.jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIIA (Group 1) :</i></b><br>>>The cancer has spread from the mucosa into the submucosa (T1) and possibly into the muscularis propria (T2). It has spread to 1 to 3 nearby lymph nodes (N1) or to areas of fat close to the lymph nodes but not into the lymph nodes themselves (N1c). It has not spread to far-off locations (M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T1 or T2 
+        <br>2. N1 or N1c
+        <br>3. M0  <br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage3a(G1).jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIIA (Group 2) :</i></b><br>>> The submucosa of the mucosa has been invaded by the cancer (T1). Four to six nearby lymph nodes have been affected (N2a). It hasn't spread to far-off locations (M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T1
+        <br>2. N2a 
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage3a(G2).jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIIB (Group 1) :</i></b><br>>>The cancer has not yet spread to neighbouring organs but has grown into the colon's or rectum's outermost layers (T3) or through the visceral peritoneum (T4a). N1a or N1b, or into areas of fat close to the lymph nodes but not into the nodes themselves (N1c), it has spread to one to three close-by lymph nodes. It hasn't spread to far-off locations (M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T3 or T4a
+        <br>2. N1 or N1c
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage3b(G1).jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIIB (Group 2) :</i></b><br>>>The muscularis propria (T2) or the colon or rectum's outermost layers (T3) have been invaded by the cancer. Four to six nearby lymph nodes have been affected (N2a). It hasn't spread to far-off locations (M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T2 or T3
+        <br>2. N2a
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage3b(G2).jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIIB (Group 3) :</i></b><br>>>The cancer may also have spread to the muscularis propria (T2) after passing through the mucosa and into the submucosa (T1). At least seven nearby lymph nodes have been affected (N2b). It hasn't spread to far-off locations (M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T1 or T2
+        <br>2. N2b
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage3b(G3).jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIIC (Group 1) :</i></b><br>>>The visceral peritoneum and the colon or rectum's outer walls have been penetrated by the cancer, but it has not yet spread to the nearby organs (T4a). 4 to 6 nearby lymph nodes have been affected by it (N2a). Not far-off locations have been affected (M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T4a
+        <br>2. N2a
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage3c(G1).jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIIC (Group 2) :</i></b><br>>>The visceral peritoneum (T3 or T4a) or the outermost layers of the colon or rectum (T3) or both have been invaded by the cancer, but it has not yet spread to nearby organs. N2b: It has spread to at least seven nearby lymph nodes. It hasn't gotten to far-off places (M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T3 or T4a
+        <br>2. N2b
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage3c(G2).jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IIIC (Group 3) :</i></b><br>>>The colon or rectum wall has been penetrated by the cancer, which has since attached itself to or spread into nearby tissues or organs (T4b). At least one nearby lymph node or areas of fat close to the lymph nodes (N1 or N2) have seen its spread. It hasn't spread to far-off locations (M0).
+        <br>>>Grouping Stages are - 
+        <br>1. T4b
+        <br>2. N1 or N2
+        <br>3. M0<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage3c(G3).jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IVA :</i></b><br>>>The colon or rectum wall may or may not have been penetrated by the cancer (Any T). Lymph nodes nearby may or may not have been affected by the spread. (Any N). The peritoneum (the lining of the abdominal cavity) has not spread to distant regions, but it has reached one distant organ (such as the liver or lung) or a distant group of lymph nodes (M1a).
+        <br>>>Grouping Stages are - 
+        <br>1. Any T
+        <br>2. Any N
+        <br>3. M1a<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage4a.jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IVB :</i></b><br>>>The colon or rectum wall may or may not have been penetrated by the cancer (Any T). Lymph nodes nearby may or may not have been affected by it (Any N). It has not spread to distant regions of the peritoneum, which lines the abdominal cavity, but rather to more than one distant organ (like the liver or lung) or distant group of lymph nodes (M1b).
+        <br>>>Grouping Stages are - 
+        <br>1. Any T
+        <br>2. Any N
+        <br>3. M1b<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage4b.jpg' %}">
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Stage IVC :</i></b><br>>>The colon or rectum wall may or may not have been penetrated by the cancer (Any T). Lymph nodes nearby may or may not have been affected by it (Any N). The lining of the abdominal cavity, the peritoneum, has been affected, and it may or may not have spread to nearby organs or lymph nodes (M1c).
+        <br><br>>>Grouping Stages are - 
+        <br>1. Any T
+        <br>2. Any N
+        <br>3. M1c<br>
+        <img style="width: 700px; height: 500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/stage4c.jpg' %}">
+    <br><br>
+    
+    >>The following additional categories are not mentioned above:
+        <br><b>TX : </b>Due to a lack of data, the main tumour cannot be evaluated.
+        <br><b>T0 : </b> No signs of a primary tumour are present.
+        <br><b>NX : </b>Due to a lack of information, regional lymph nodes cannot be evaluated.
+    </p>
+    <br><br>
+    <p style="font-size: 20px; text-align: justify"><b><i>Recurrent : </i></b><br>>>Cancer that has returned after treatment is referred to as recurrent cancer. The condition may affect the colon, the rectum, or another area of the body. There will be additional testing to determine the extent of the cancer recurrence if it does. These examinations and scans frequently resemble those carried out at the time of the initial diagnosis.</p>
+    </section>
+
+    <br><br>
+    
+    <footer>
+      <div>
+        <span>Jaypee Institute of Information Technology</span>
+        <span class="link">
+            <a href="#">Home</a>
+            <a href="contact.html">Contact Us</a>
+        </span>
+      </div>
+    </footer>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+              myDropdown.classList.remove('show');
+            }
+          }
+        }
+        </script>
+  </body>
+</html>

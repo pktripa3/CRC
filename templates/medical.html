@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    {% load static %}
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/en/5/56/Logo-jiit.png"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> COLORECTAL CANCER DATABASE </title>
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+}
+
+.navbar {
+  display: flex;
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.navbar input#menu-toggler {
+  display: none;
+}
+
+.navbar #hamburger-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .all-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .all-links li {
+  position: relative;
+  list-style: none;
+}
+
+.navbar .logo a {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+header a, footer a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #fff;
+  height: 100%;
+  padding: 20px 0;
+  display: inline-block;
+}
+
+header a:hover, footer a:hover {
+  color: #ddd;
+}
+
+.homepage {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% );
+  background-position: center 65%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.homepage .content {
+  display: flex;
+  height: 85%;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepage .content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.homepage .content .text {
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content a {
+  color: #000;
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #fff;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.3);
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0 0;
+}
+
+section h2 {
+  font-size: 2rem;
+}
+
+section > p {
+  text-align: center;
+}
+
+section .cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-top: 50px;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+section.about {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.about .company-info {
+  margin-top: 30px;
+}
+
+.about h3 {
+  margin: 30px 0 10px;
+}
+
+.about .team {
+  text-align: left;
+  width: 100%;
+}
+
+.about .team ul {
+  padding-left: 20px;
+}
+
+section .cards .card {
+  background: #fff;
+  padding: 40px 15px;
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 40px;
+  width: calc(100% / 3 - 30px);
+  text-align: center;
+}
+
+.portfolio .cards .card {
+  padding: 0 0 20px;
+}
+
+.services .card img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.portfolio .card img {
+  width: 100%;
+  padding-bottom: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.cards .card p {
+  padding: 0 15px;
+  margin-top: 5px;
+}
+
+.about .row {
+  padding: 0 10px;
+}
+
+.contact .row {
+  margin: 60px 0 90px;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact .row .col {
+  padding: 0 10px;
+  width: calc(100% / 2 - 50px);
+}
+
+.contact .col p {
+  margin-bottom: 10px;
+}
+
+.contact .col p i {
+  color: #7a7a7a;
+  margin-right: 10px;
+}
+
+.contact form input {
+  height: 45px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #bfbfbf;
+}
+
+.contact form textarea {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  height: 150px;
+  outline: none;
+  resize: vertical;
+  border: 1px solid #bfbfbf;
+}
+
+.contact form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #333;
+  transition: 0.2s ease;
+}
+
+.contact form button:hover {
+  background: #525252;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+  padding: 20px 0;
+}
+
+footer div {
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer span {
+  color: #fff;
+}
+
+footer a {
+  padding: 0;
+}
+
+@media screen and (max-width: 860px) {
+  .navbar .all-links {
+    position: fixed;
+    left: -100%;
+    width: 300px;
+    display: block;
+    height: 100vh;
+    top: 75px;
+    background: #333;
+    transition: left 0.3s ease;
+  }
+
+  .navbar #menu-toggler:checked~.all-links {
+    left: 0;
+  }
+
+  .navbar .all-links li {
+    font-size: 18px;
+  }
+
+  .navbar #hamburger-btn {
+    display: block;
+  }
+
+  section > p {
+    text-align: center;
+  }
+
+  section .cards .card {
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 30px;
+  }
+
+  .homepage .content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .homepage .content .text {
+    font-size: 17px;
+  }
+
+  .content a {
+    font-size: 17px;
+    padding: 9px 20px;
+  }
+
+  .contact .row {
+    flex-direction: column;
+  }
+
+  .contact .row .col {
+    width: 100%;
+  }
+
+  .contact .row .col:last-child {
+    margin-top: 40px;
+  }
+
+  footer a {
+    height: 0;
+  }
+}
+
+.dropdown {
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: transparent;
+  }
+  
+  .show {
+    display: block;
+  }
+
+@media screen and (max-width: 560px) {
+  section .cards .card {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+</style>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">CRCMPDDB</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </label>
+        <ul class="all-links">
+          <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()"><a href="home.html">Home</a>
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="about.html">About</a>
+    <a href="stages.html"> Stages</a>
+    <a href="factors.html">Factors</a>
+    <a href="medical.html">Medical Conditions</a>
+    <a href="role.html">Role of Medicinal Plants</a>
+  </div>
+</div> 
+<li><a href="family.html">CRC Medicinal plant <br> & its basic taxonomy</a></li>
+<li><a href="genome.html">CRC_Genome</a></li>
+<li><a href="drug.html">Natural Drugs</a></li>
+<li><a href="metabolite.html">Medicinal plant <br> & its metabolites </a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+</header>
+
+    <section class="about" id="about"><br><br>
+      <h2><u>MEDICAL CONDITIONS WITH AVAILABLE THERAPIES AND THEIR SIDE EFFECTS</u></h2><br>
+      <h3 style="font-size: 30px;"><u>Diagnosis</u></h3><br>
+      <ul style="font-size: 20px; text-align: justify"> Numerous tests are used by doctors to find or diagnose cancer. Additionally, tests are performed to see if the cancer has moved from the original site to another area of the body. Metastasis is the medical term for when cancer has spread. The best treatments may be discovered through tests that doctors may perform.
+        <br><br>A biopsy is typically the only reliable way for a doctor to determine whether a part of the body has cancer. A biopsy involves the doctor taking a small sample of tissue for laboratory analysis. The doctor may suggest additional tests to help with diagnosis if a biopsy is not an option.
+      </ul>
+    </section>
+
+    <section class="about" id="about">
+        <h3 style="font-size: 30px;"><u>Detection Methods for Colorectal Cancer </u></h3><br>
+        <ul style="font-size: 20px; text-align: justify">
+            For the diagnosis of colorectal cancer, numerous tests are used. Not every test mentioned here will be applied to every person.Considerations for selecting a diagnostic test include:
+            <br><br>
+            <li>Cancer type that is suspected.</li>
+            <li>A list of symptoms and signs.</li>
+            <li>The age and overall health.</li>
+            <li>Person's health and family background.</li>
+            <li>The results of earlier diagnostic procedures.</li>
+            <br><br>
+            The following tests may be utilised in conjunction with a physical examination to identify colorectal cancer:<br><br>
+            <li><b>Colonoscopy : </b>A colonoscopy in screening enables the physician to examine the entire rectum and colon while the patient is unconscious. A doctor who focuses on performing this test is known as a colonoscopist. If colorectal cancer is discovered, surgery to remove the tumour may be necessary before a complete diagnosis that accurately describes the cancer's location and spread can be made.</li>
+            <br>
+            <li><b>Biopsy : </b>Small amounts of tissue are removed during a biopsy in order to be examined under a microscope. Other tests may indicate the presence of cancer, but only a biopsy will provide a conclusive diagnosis of colorectal cancer. After that, a pathologist examines the sample(s). A physician who focuses on analysing laboratory results and assessing cells, tissues, and organs to identify diseases is known as a pathologist. During a colonoscopy or on any tissue that is removed during surgery, a biopsy can be carried out. To assist with a needle biopsy, a CT scan or ultrasound may occasionally be used. Through the skin, a needle is inserted during a needle biopsy to remove tissue from the tumour.</li>
+            <br>
+            <li><b>Biomarker Testing Of The Tumor : </b>The identification of particular genes, proteins, and other characteristics that are particular to the tumour using a tumour sample in a lab. Molecular tumour testing is another name for this procedure. 
+           <br><br>Mismatch repair defects, also known as dMMRs, should be examined in all colorectal cancers. For these tests, there are two causes. It is a method of checking for Lynch syndrome, first.Second, the outcomes will be used to determine whether immunotherapy is something that patients with metastatic disease should take into account. Microsatellite instability (MSI) analyses or special staining of biopsy or surgical tissue can both be used for this testing to look for changes.
+           <br><br>If tissue is available, it is preferred to use it for testing if you have metastatic or recurrent colorectal cancer in that area.</li>
+           <br>
+           <li><b>Blood Tests : </b>People with colorectal cancer may develop anaemia because the disease frequently bleeds into the large intestine or the rectum. A complete blood count (CBC), which measures the quantity of red cells in the blood, can reveal the possibility of bleeding.
+          <br><br>Carcinoembryonic antigen (CEA), a protein, is measured in the blood via another test. High levels of CEA could be a sign that a cancer has spread to different body parts. Only about 60% of people with colorectal cancer who have had it spread from the colon to other organs have high levels of CEA, making it far from a perfect test for the disease. Additionally, CEA may rise as a result of other medical conditions.A CEA test is most frequently used to check on patients who are already receiving treatment for colorectal cancer.</li>
+          <br>
+          <li><b>Computed tomography(CT or CAT) scan : </b>A CT scan uses x-rays taken at various angles to create images of the interior of the body. These images are combined by a computer to create a detailed, three-dimensional image that reveals any anomalies or tumours. The size of the tumour can be assessed using a CT scan. Before the scan, a special dye known as a contrast medium may be administered to improve the image's clarity. This dye can be administered intravenously or as a pill or liquid for ingestion. A CT scan can determine whether colorectal cancer has spread to the lungs, liver, or other organs in a patient. </li>
+          <br>
+          <li><b>Magnetic resonance imaging(MRI) : </b>An MRI creates precise images of the body using magnetic fields rather than x-rays. The tumor's size can be determined using MRI. To produce a clearer image, a contrast medium, a special dye, is administered prior to the scan. This dye can be given to a patient as an injection into a vein or as a pill or liquid to swallow. The best imaging procedure to determine the extent of colorectal cancer growth is MRI.</li>
+          <br>
+          <li><b>Ultrasound : </b>In order to determine whether cancer has spread, an ultrasound creates a picture of the internal organs using sound waves. Endorectal ultrasound is frequently employed to assess the extent of rectal cancer growth and can aid in treatment planning. Cancer that has spread outside of the pelvis or to nearby lymph nodes cannot be accurately detected by this test, though. While CT scans or MRIs are more effective at detecting liver tumours, ultrasound can also be used to visualise the liver.</li>
+          <br>
+          <li><b>Chest x-ray : </b>Using a small amount of radiation, an x-ray can be used to produce a picture of the internal organs and structures of the body. If the cancer has spread to the lungs, doctors can determine this through a chest x-ray.</li>
+          <br>
+          <li><b>Positron emission tomography(PET) or PET-CT scan : </b>A PET scan is usually combined with a CT scan (see above), called a PET-CT scan. However, you may hear your doctor refer to this procedure just as a PET scan. A PET scan is a way to create pictures of organs and tissues inside the body. A small amount of a radioactive sugar substance is injected into the patient’s body. This sugar substance is taken up by cells that use the most energy. Because cancer tends to use energy actively, it absorbs more of the radioactive substance. However, the amount of radiation in the substance is too low to be harmful. A scanner then detects this substance to produce images of the inside of the body. PET scans are not regularly used for all people with colorectal cancer, but there are specific situations when your doctor may recommend one.</li>
+          <br><br>
+          </ul>
+    </section>
+
+    <section class="about" id="about">
+        <h3 style="font-size: 30px;"><u>Treatment Options for Colorectal Cancer and their Side Effects</u></h3><br>
+        <ul style="font-size: 20px; text-align: justify"> The several forms of therapies, usually referred to as treatments, that are the norm for treating colorectal cancer. The term "standard of care" refers to the most effective medical interventions. The patient should consider the possibility of clinical trials with the physician before deciding on a treatment strategy. A clinical trial is a research project that evaluates a novel therapeutic strategy. Clinical trials allow doctors to determine if a novel treatment is risk-free, efficient, and perhaps even superior to the accepted practise. New medications, novel combinations of conventional therapies, and novel dosages of these therapies can all be tested in clinical trials. All stages of cancer can benefit from clinical trials. The medical professional can assist the patient in selecting the best course of therapy.
+        </ul>
+       
+        <br><br>
+                   <h2 style="font-size: 28px;"><b><u>The Methods Used To Treat Colorectal Cancer</b></u> </h2><br>
+       <ul style="font-size: 20px; text-align: justify">
+       The overall treatment plan for a patient with cancer is frequently developed in collaboration with several types of doctors and typically consists of or combines various treatments. It is referred to as a multidisciplinary team. A surgeon, a medical oncologist, a radiation oncologist, and a gastroenterologist are typically involved in the treatment of colorectal cancer. A physician with expertise in gastrointestinal system problems and function is known as a gastroenterologist. Oncology nurses, physician assistants, nurse practitioners, social workers, pharmacists, counsellors, nutritionists, and other health care specialists are some of the various health care providers who serve on cancer care teams.
+       <br><br>
+       Options for treatment and recommendations are based on a number of variables, such as the kind and stage of the cancer, potential side effects, the patient's preferences, and general health. 
+       <br><br>Independent of the patient's age, studies have demonstrated that the advantages of these various therapy modalities are comparable. A special set of therapy issues, nevertheless, may exist for older people. All treatment choices should take these things into account in order to customise the treatment to each patient:
+       <br><br>
+       <li>Additional medical issues with the patient.</li>
+       <li>Overall health of the patient.</li>
+       <li>Risks associated with the proposed course of therapy.</li>
+       <li>The patient already uses several prescription drugs.</li>
+       <li>Dietary intake and social support for the patient.</li><br>
+       Following is a list of typical colorectal cancer therapies and a description of their negative effects:<br><br>
+       </ul>
+       
+       <ul style="font-size: 20px; text-align: justify"><b><i><u> 1. Surgery : </u></i></b>
+       <br><br>
+       The tumour and part of the surrounding healthy tissue are removed during surgery. Surgical resection is a common name for it. The most typical course of action for colorectal cancer is this. In addition, a portion of the healthy colon or rectum and adjacent lymph nodes will be taken out.
+       <br><br>
+       Colorectal surgery can be performed by both general surgeons and specialists, however many patients speak with experts since they have more education and expertise in the field. A medical professional who focuses on surgically treating cancer is known as a surgical oncologist. An expert in the diagnosis and treatment of conditions affecting the colon, rectum, and anus is known as a colorectal surgeon. Proctologists used to be the term for colorectal surgeons.
+       <br><br>
+       Surgical options for colorectal cancer, in addition to surgical resection, include:
+       <br><br>
+       <li><b>Laparoscopic surgery : </b>Laparoscopic colorectal cancer surgery may be an option for certain people. This method involves sedated patients being passed many viewing scopes into the belly. Anaesthesia is a medication that suppresses pain perception. Compared to traditional colon surgery, the recovery period is frequently quicker and the incisions are smaller. In order to remove the malignancy, laparoscopic surgery is just as successful as traditional colon surgery. Laparoscopic surgeons have received specialised training in this procedure.</li>
+       <br> 
+       <li><b>Colostomy For Rectal Cancer : </b>A colostomy may occasionally be necessary for someone with rectal cancer. Through this surgical incision, also known as a stoma, the colon is joined to the abdominal wall to create a passageway for waste to leave the body. This waste is collected in a pouch that the patient wears. The colostomy may be permanent, but it may also simply be there temporarily as the rectum heals. Most patients receiving treatment for rectal cancer do not require a permanent colostomy because to advances in surgical procedures, as well as the use of chemotherapy and radiation therapy prior to surgery when necessary. </li>
+       <br>
+       <li><b>RadioFrequency Ablation(RFA) Or CryoAblation : </b>The removal of colon cancer that has progressed to the liver or lungs may be necessary for some individuals. RFA and cryoablation are two additional therapies that may be used to either heat or freeze tumours utilising energy in the form of radiofrequency waves. These methods can't always be used to treat liver or lung tumours. Through the skin or during surgery, RFA is possible. While this can assist prevent the removal of certain liver and lung tissue during routine surgery, there is a probability that some tumour tissue will still be present.</li>
+       <br>
+       <p style="font-size: 20px;"><i> <b><u>Side Effects of Surgery :</i></b></u><br><br>
+       The surgical site will be sore and uncomfortable for a while after the procedure. Additionally, the procedure may result in diarrhoea or constipation, which often disappears after some time. Colostomy patients may have itching near the stoma. <br>
+       After surgery, a lot of individuals need to retrain their bowels. It could take some time and help with this.
+       </p></ul>
+       <br><br>
+       
+       <ul style="font-size: 20px; text-align: justify"><b><i><u>2. Radiation Therapy : </u></i></b>
+       <br><br>
+       High-energy x-rays are used in radiation treatment to kill cancer cells. Rectal cancer is frequently treated with it since this type of tumour frequently returns close to its initial site of occurrence. Radiation oncologists are medical professionals that specialise in administering radiation therapy as a cancer treatment. A radiation therapy regimen, often known as a schedule, typically has a certain number of sessions spread out over a predetermined amount of time.
+       <br><br>
+       <li><b>External-Beam Radiation Therapy : </b>An apparatus is used in external-beam radiation treatment to deliver x-rays to the site of the tumour. For a few weeks, radiation therapy is typically administered five days a week. It may be administered at the hospital or at the doctor's office.</li>
+       <br> 
+       <li><b>Stereotactic Radiation Therapy : </b>If colorectal cancer has advanced to the liver or lungs, stereotactic radiation treatment, a form of external-beam radiation therapy, could be employed. This kind of radiation therapy targets a tiny region with a strong, precise radiation dosage. By using this method, sections of the liver and lung tissue that may normally need to be removed during surgery might be saved. Not all tumours that have progressed to the liver or lungs may be treated in this manner, though.</li>
+       <br>
+       <li><b>Other Types Of Radiation Therapy : </b>Some patients may benefit from specialised radiation treatment methods like intraoperative radiation therapy or brachytherapy to eradicate tiny regions of cancer that cannot be surgically removed.
+       <br>
+       1. <u>Intraoperative Radiation Therapy -</u> A single, high dose of radiation treatment is administered during surgery as part of intraoperative radiation therapy. </br>
+       2. <u>Brachytherapy -</u> The use of radioactive "seeds" injected inside is known as brachytherapy. When surgery is not an option, colon cancer that has progressed to the liver can be treated with one form of brachytherapy using a product called SIR-Spheres. Tiny doses of a radioactive material called yttrium-90 are injected into the liver. The effectiveness of this strategy is not well understood, however some studies indicate that it could help halt the spread of cancer cells. <br>
+       </li>
+       <br>
+       <li><b>Radiation therapy for rectal cancer : </b>In order to make the tumour smaller and simpler to remove before surgery, radiation treatment, also known as neoadjuvant therapy, may be utilised in cases of rectal cancer. It can also be used to eliminate any cancer cells that may still be present following surgery. These two methods of treatment have both been successful. Chemotherapy is frequently administered concurrently with radiation treatment in order to boost the efficacy of the radiation therapy. The term for this is chemoradiation treatment.
+       <br><br>
+       Before surgery, chemotherapy is frequently given for rectal cancer to prevent colostomies or lower the likelihood of a recurrence. According to one study, chemotherapy and radiation treatment administered prior to surgery had superior results and less potential for adverse consequences. The key advantages were a decreased incidence of cancer recurrence in the original site of the disease, a decrease in the number of patients who required permanent colostomies, and a decrease in intestinal scarring issues where radiation treatment was administered.
+       <br><br>
+       In the US, radiation treatment is frequently administered to patients with rectal cancer more than 5.5 weeks prior to surgery. A five-day course of radiation treatment prior to surgery is acceptable and/or desirable for some individuals (and in some nations).
+       <br><br>
+       Currently, some individuals are receiving treatment for rectal cancer using a more modern method. Total neoadjuvant treatment, or TNT, is the name of the procedure. For around 6 months before to surgery, TNT uses both chemotherapy and chemoradiation treatment.
+       <br><br>
+       <p style="font-size: 20px;"><i><b> <u>Side Effects of Radiation Therapy : </i></b></u><br><br>Fatigue, moderate skin responses, stomach distress, and loose stools are all possible side effects of radiation therapy. Additionally, rectum haemorrhage or bowel obstruction may result in bloody stools. The majority of adverse effects disappear quickly when therapy is over.
+       <br>After pelvic radiation therapy, sexual health issues and infertility (the inability to conceive) might develop.
+       </p></ul>
+    </section>
+
+    <section class="about" id="about">
+        <h3 style="font-size: 28px;"><u>Medication-Based Therapies</u></h3><br>
+        <ul style="font-size: 20px; text-align: justify">
+            Medication to kill cancer cells might be part of the therapeutic strategy. To reach cancer cells all across the body, medication might be injected into the circulation. This type of medication administration is referred to as systemic treatment. Additionally, medicine may be administered locally, which entails applying it directly to the malignancy or keeping it in a specific area of the body.
+            <br><br>
+            An expert in using drugs to treat cancer, a medical oncologist often prescribes this kind of therapy.
+            <br>
+            Medications are frequently administered either orally—by swallowing a tablet or capsule—or intravenously (IV), which is accomplished by inserting an IV tube into a vein.
+            <br><br>
+            The following list of drugs is used to treat colorectal cancer:
+            <br><br>
+            <li>Chemotherapy</li>
+            <li>Targeted Therapy</li>
+            <li>Immunotherapy</li>
+            <br>
+            One pharmaceutical type may be administered to a patient at a time, or a number of different medications may be administered simultaneously. Additionally, they might be administered as a component of a therapeutic strategy that also involves surgery and/or radiation therapy.
+            <br><br>
+            Cancer treatments are always being assessed, including pharmaceuticals.
+            </ul><br><br>
+            <ul style="font-size: 20px; text-align: justify"><b><i><u>1. ChemoTherapy : </u></i></b>
+              <br><br>
+              Chemotherapy, which involves administering medications to cancer patients, works to eradicate cancer cells by preventing them from proliferating, dividing, and producing new ones.
+            <br><br>
+            A chemotherapy regimen, often known as a schedule, typically entails a defined number of cycles administered over a predetermined amount of time.
+            <br><br>
+            After surgery, chemotherapy may be used to get rid of any cancer cells that remained. To shrink a rectal tumour and lower the risk of the disease returning, the doctor may provide chemotherapy and radiation therapy before surgery for some patients with rectal cancer.
+            <br><br>
+            The U.S. Food and Drug Administration (FDA) has authorised many medications to treat colorectal cancer in Americans. 
+            <br><br>
+            When treating colorectal cancer, the U.S. FDA-approved medications may occasionally be coupled with medications used in targeted treatment, such as: 
+            <br><br>
+            <li>Capecitabine (Xeloda)</li>
+            <li>Fluorouracil (5-FU)</li>
+            <li>Irinotecan (Camptosar)</li>
+            <li>Oxaliplatin (Eloxatin)</li>
+            <li>Trifluridine/tipiracil (Lonsurf)</li>
+            <br>
+            Several typical treatment plans using these medications include:
+            <br><br>
+            <li>5-FU alone</li>
+            <li>5-FU with leucovorin (folinic acid), a vitamin that improves the effectiveness of 5-FU</li>
+            <li>Capecitabine, an oral form of 5-FU</li>
+            <li>FOLFOX : 5-FU with leucovorin and oxaliplatin</li>
+            <li>FOLFIRI : 5-FU with leucovorin and irinotecan</li>
+            <li>Irinotecan alone</li>
+            <li>FOLFOXIRI : 5-FU with leucovorin, oxaliplatin, and irinotecan</li>
+            <li>XELOX/CAPEOX : Capecitabine with oxaliplatin</li>
+            <br>
+            It may be advised to use a targeted treatment such as bevacizumab (Avastin), cetuximab (Erbitux), or panitumumab (Vectibix) in conjunction with chemotherapy.
+            <br><br>
+            <p style="font-size: 20px;"><i> <u><b>Side Effects of ChemoTherapy :</b></i></u><br><br>Chemotherapy can result in mouth sores, diarrhoea, nausea, vomiting, and neuropathy, which causes tingling or numbness in the hands or feet. However, there are drugs that can stop these negative effects. For the majority of people, these side effects are less severe than in the past due to the manner medications are administered. Additionally, there is a higher risk of infection and patients may experience unusual weariness or exhaustion. Major hair loss is a rare adverse effect of many colorectal cancer medications, while it is more frequent with chemotherapy regimens containing irinotecan.
+            <br>
+            The medicine dose may be reduced or a treatment session may be postponed if adverse effects are especially challenging.
+            </p></ul>
+            <br><br>
+            <ul style="font-size: 20px; text-align: justify"><b><i><u>2. Targeted Therapy : </u></i></b>
+              <br><br>
+              A treatment known as targeted therapy specifically targets the cancer's unique genes, proteins, or tissue environment that promotes the growth and survival of the disease. This form of therapy prevents the development and spread of cancer cells while minimising harm to healthy cells.
+              <br><br>
+              The goals of every tumour vary. Doctor may do tests to determine the genes, proteins, and other components of the patient's tumour in order to determine the most effective therapy. When feasible, this enables doctors to provide each patient with the most beneficial care. Additionally, novel medicines that target certain molecular targets are being discovered through research investigations. The use of these medications in the management of colorectal cancer is growing. 
+              <br><br>
+              According to studies, elderly people can gain the same advantages from targeted therapy as younger patients. Additionally, both older and younger individuals can often cope with the anticipated adverse effects.
+              <br><br>The following targeted therapy may be available for colorectal cancer.
+              <br><br><ul style="font-size: 20px; text-align: justify"> <b>Anti-Angiogenesis Therapy :</b>
+                Anti-angiogenesis treatment aims to halt the process of angiogenesis, or the growth of new blood vessels. Anti-angiogenesis medicines aim to "starve" tumours since they require the nutrients provided by blood vessels to develop and spread.
+                <br><br>
+                <li><i><u>Bevacizumab(Avastin)</u> : </i> People with advanced colorectal cancer may survive longer when bevacizumab is administered in conjunction with chemotherapy. The FDA authorised bevacizumab with chemotherapy as the initial, or first-line, treatment for advanced colorectal cancer in 2004. Recent trials have demonstrated its efficacy as a second-line treatment following chemotherapy. Bevacizumab-awwb (Mvasi) and bevacizumab-bvzr (Zirabev), two medications that are comparable to bevacizumab, have also received FDA approval to treat advanced colorectal cancer. These are referred to as biosimilars.</li>
+                <br>
+                <li><i><u>Regorafenib(Stivarga)</u> : </i> This medication is intended to treat patients with metastatic colorectal cancer who have already undergone specific forms of chemotherapy and other targeted treatments.</li>
+                <br>
+                <li><i><u>Ziv-aflibercept(Zaltrap) and ramucirumab(Cyramza)</u> : </i> As a second-line therapy for metastatic colorectal cancer, either of these medications may be coupled with the chemotherapy FOLFIRI.</li>
+              </ul>
+            <br><br>
+              <ul style="font-size: 20px; text-align: justify"> <b>Epidermal Growth Factor Receptor(EGFR) Inhibitors :</b>
+                According to research, EGFR-blocking medications may be useful for halting or reducing the progression of colorectal cancer.
+                <br><br>
+                <li>Erbitux, or cetuximab</li>
+                <li>Panitumumab(Vectibix)</li>
+                <br>
+                Recent research demonstrates that cetuximab and panitumumab are less effective against tumours with particular RAS mutations or modifications. All patients with metastatic colorectal cancer who could be given an EGFR inhibitor are advised by ASCO to have tumours examined for RAS and RAF gene alterations. ASCO advises against using EGFR inhibitors when a tumour carries a certain BRAF mutation known as V600E or a mutant version of the RAS gene.
+              </ul>
+              <br><br>
+              <ul style="font-size: 20px; text-align: justify"><b>Combined Targeted Therapies :</b>
+                An FDA-approved test can identify the BRAF V600E mutation, which is present in certain tumours. BRAF inhibitors are a group of targeted therapies that can be used to treat tumours having this mutation. Patients who have had at least 1 prior therapy and have metastatic colorectal cancer with this mutation may be treated with a combination of cetuximab and the BRAF inhibitor encorafenib (Braftovi).
+              </ul>
+              <br><br>
+              <ul style="font-size: 20px; text-align: justify"><b>HER2-Targeted Therapy :</b>
+                A protein called HER2 that is expressed by some tumours can be specifically targeted by drugs. When this occurs, the malignancy is referred to as HER2-positive. Treatment with a combination of tucatinib (Tukysa) and trastuzumab (Herceptin and other brand names) may be an option for persons with advanced colorectal cancer who test positive for the HER2 gene. If chemotherapy has failed to function or has produced negative effects that necessitate terminating treatment, this combination may only be used if there are no mutations in the RAS gene, surgery is not an option, and all other treatments have failed. Additionally, it appears that tumours with PIK3CA mutations do not respond as effectively to HER2-targeted therapy.
+              </ul>
+              <br><br>
+              <ul style="font-size: 20px; text-align: justify"><b>Tumor-Agnostic Treatment :</b>
+                In contrast to other forms of targeted treatment, larotrectinib (Vitrakvi) and entrectinib (Rozlytrek) concentrate on a particular genetic alteration known as an NTRK fusion. Although this kind of genetic alteration is uncommon, it can be seen in a variety of tumours, including colorectal cancer. The use of these drugs is authorised as a treatment for metastatic colorectal cancer or colorectal cancer that has progressed after receiving prior therapies and cannot be removed surgically.
+                <br><br>
+                Additionally, the tumour may be examined for other molecular indicators, such as PIK3CA mutations and others. Targeted medicines for these indicators have not yet received FDA approval, however there may be chances to get treated in clinical trials looking at these molecular alterations.
+              </ul>
+              <br><br>
+            <p style="font-size: 20px;"><i> <u><b>Side Effects of Targeted Therapy :</b></i></u><br><br>
+            A rash on the face and upper body is one of the side effects of targeted therapies, although it may be avoided or lessened with other treatments.
+            </p></ul><br><br>
+            
+            <ul style="font-size: 20px; text-align: justify"><b><i><u>3. ImmunoTherapy : </u></i></b>
+            <br><br>Immunotherapy strengthens the immune system's capacity to target cancer cells in order to combat the disease.
+            <br>An major form of immunotherapy used to treat colorectal cancer is checkpoint inhibitors. 
+            <br><br><li><b>Pembrolizumab(Keytruda) : </b>Pembrolizumab works to block the tumour cells' ability to conceal themselves from the immune system by targeting the PD-1 receptor on tumour cells. Treatment for colorectal tumours with a molecular characteristic known as microsatellite instability (MSI-H) or mismatch repair deficiency (dMMR) involves the drug pembrolizumab (see Diagnosis). Unresectable denotes the absence of a surgical alternative.</li>
+            <br><li><b>Nivolumab(Opdivo) : </b>After receiving chemotherapy with a fluoropyrimidine (such as capecitabine and fluorouracil), oxaliplatin, and irinotecan, MSI-H or dMMR metastatic colorectal cancer that has developed or spread is treated with nivolumab in patients aged 12 or older.</li>
+            <br><li><b>Dostarlimab(Jemperli) : </b>A PD-1 immune checkpoint inhibitor is dostarlimab. It might be utilised to treat colorectal tumours with dMMR that are metastatic or recurrent.</li>
+            <br><li><b>Nivolumab and ipilimumab(Yervoy) combination : </b> Patients who are 12 years of age or older who have MSI-H or dMMR metastatic colorectal cancer that has developed or spread following treatment with fluoropyrimidine, oxaliplatin, and irinotecan are eligible to receive this combination of checkpoint inhibitors.</li>
+            <br><br>
+            <p style="font-size: 20px;"><i> <u><b>Side Effects of ImmunoTherapy :</b></i></u><br><br>
+              Immunotherapy can have a variety of unwanted consequences. Immunotherapy's most frequent adverse effects might include weakness, rash, diarrhoea, nausea, fever, joint and muscle pain, stomach discomfort, itching, vomiting, coughing, decreased appetite, and shortness of breath. Immunotherapy can make you more likely to have inflammation in several bodily organs. 
+            </p></ul>
+    </section>
+
+    <section class="about" id="about">
+        <h3 style="font-size: 30px;"><u>Colorectal Cancer Treatment According to Stage </u></h3><br>
+        <ul style="font-size: 20px; text-align: justify">
+            Each stage of colorectal cancer may call for a different course of therapy.
+            Surgery is often effective for treating stages 0, I, II, and III. However, chemotherapy is often given to many stage III colorectal cancer patients as well as some stage II patients following surgery to improve the likelihood of curing the condition. Additionally, radiation treatment and chemotherapy are given to patients with stage II and stage III rectal cancer either before or after surgery. Stage IV is seldom curable, but it is treatable, and the cancer's development as well as its symptoms can be controlled.
+            <br><br>
+            <li><b>Stage 0 Colorectal Cancer:</b><br>
+              A polypectomy, or removal of a polyp, is the standard course of therapy during a colonoscopy. A second operation is not necessary unless the polyp cannot be completely removed.
+            </li>
+            <br>
+            <li><b>Stage I Colorectal Cancer:</b><br>
+              Usually, the sole course of action required is surgical excision of the tumour and lymph nodes.
+            </li>
+            <br>
+            <li><b>Stage II Colorectal Cancer:</b><br>
+              The initial course of action is frequently surgery. Stage II colorectal cancer patients should discuss with their doctor if additional treatment is necessary following surgery since, in certain circumstances, adjuvant chemotherapy may be advised. After surgery, chemotherapy is administered as adjuvant therapy in an effort to eradicate any cancer cells that may still be present. For many persons with stage II colon cancer, ASCO does not advise adjuvant chemotherapy. For many persons with this stage of colon cancer, there are minimal advantages of extra therapy because the cure rates for surgery alone are fairly favourable. Adjuvant chemotherapy, however, could be advised for some patients with cancer that has spread to surrounding organs, completely destroyed the intestinal wall, or exhibits signs of a high risk of recurrence. 
+              <br>Radiation treatment and chemotherapy are frequently used in conjunction with surgery, either before or after stage II rectal cancer. After surgery, further chemotherapy may also be administered.
+            </li>
+            <br>
+            <li><b>Stage III Colorectal Cancer:</b><br>
+              Surgery to remove the tumour is often followed by adjuvant treatment. An alternative may be a clinical study. Adjuvant therapy's length is determined on the likelihood of recurrence (based on the features of the cancer that was surgically excised). Recent ASCO recommendations advise using a shared decision-making approach for selecting the length of therapy, taking into consideration patient characteristics, values, and preferences, among other things, and talking about the benefits and hazards of length.
+              <br>In addition to adjuvant chemotherapy, radiation treatment may also be utilised to treat rectal cancer before or after surgery.
+            </li>
+            <br>
+            <li><b>Metastatic (Stage IV) Colorectal Cancer:</b><br>
+              Doctors refer to cancer as metastatic if it spreads from the original site to another area of the body. The liver, lungs, lymph nodes, ovaries, and the membrane lining the belly known as the peritoneum are just a few of the distant organs to which colorectal cancer can spread. 
+              <br>
+              A treatment approach that combines chemotherapy, targeted therapy, immunotherapy, surgery, and radiation therapy in an effort to both stop the disease's progression and reduce malignant tumours. Additionally crucial will be palliative care in easing cancer-related symptoms and adverse effects of therapy.
+              <br>
+              Surgery to remove the section of the colon where the cancer first appeared is often not advised for stage IV colorectal cancer, but it could assist with colon obstruction or other cancer-related issues. Resection, the term for using surgery to remove cancerous portions of other organs, is another option that may be used to treat some patients whose cancer has only slightly progressed to a single organ like the liver or the lung.
+              <br>
+              ASCO advises beginning with FOLFOX, FOLFIRI, or CAPOX chemotherapy for persons with metastatic colorectal cancer who do not have dMMR or MSI-H and cannot initially be treated by surgery. In rare cases, FOLFOXIRI may be suggested as an alternative.
+              <br>
+              The first line of treatment for those with left-sided colorectal cancer that is not dMMR/MSI-H and does not include mutations in the RAS, BRAF, or HER2 genes should consist of an EGFR inhibitor in addition to a two-drug chemotherapy regimen.
+              <br>
+              The American Society of Clinical Oncology (ASCO) advises beginning immunotherapy using pembrolizumab for patients with metastatic colorectal cancer who have dMMR or MSI-H.
+              <br>
+              Combination targeted therapy utilising encorafenib and cetuximab may be advised if the malignancy has a BRAF V600E mutation and the prior treatment has failed to halt it.
+              <br>
+              Chemotherapy in addition to surgery to shrink the tumours may be advised if the colorectal cancer has progressed to the peritoneum.
+              <br>
+              There is a chance of a full recovery if the colon cancer has only migrated to the liver and if surgery is an option, either before or after chemotherapy. Even when a person's cancer cannot be cured, surgery may extend their life by months or even years. Chemotherapy and surgery can sometimes be combined. Determining whether patients can benefit from surgery for cancer that has progressed to the liver is sometimes a challenging procedure that requires collaboration between several medical professionals with diverse expertise to select the best course of action. If colon cancer that has progressed to the liver cannot be treated surgically, radiation treatment may be an alternative.
+              <br>
+              A metastatic cancer diagnosis may be extremely distressing and challenging for many people. We urge you and your family to discuss your feelings with the physicians, nurses, social workers, and other members of your healthcare team. Speaking with patients in a support group or through another peer support programme may also be beneficial.
+            </li>
+          </ul>
+    </section>
+
+    <section class="about" id="about">
+        <h3 style="font-size: 30px;"><u>Colorectal Cancer's Physical, Psychological, and Societal Impacts</u></h3><br>
+        <p style="font-size: 20px; text-align: justify" >
+            Along with emotional, social, and economical impacts, cancer and its treatment include physical symptoms and side effects. Palliative or supportive care is the term used to describe how these consequences are managed. 
+            <br><br>
+            Through the control of symptoms and assistance for patients and their families with other, non-medical needs, palliative care aims to improve how the patient feels while receiving treatment. This kind of care is available to everybody, regardless of age or cancer kind or stage. And it frequently works best when therapy is initiated as soon as a cancer diagnosis is made. People who get palliative care in addition to cancer therapy frequently experience fewer severe symptoms, a higher quality of life, and more satisfaction with their care overall.
+            <br><br>
+            There are many different types of palliative care, and these care options frequently involve medication, dietary adjustments, relaxation exercises, emotional and spiritual support, and other therapies. 
+            <br><br>
+            The patient should discuss the objectives of each prescribed course of treatment with his or her doctor before starting treatment. He should also discuss palliative care choices and potential negative effects of the particular treatment strategy. Speaking with a social worker and taking part in support groups are two other patient-friendly activities. 
+          </p>
+    </section>
+
+    <section class="about" id="about">
+        <h3 style="font-size: 30px;"><u>Chances of Recurrence and Remission </u></h3><br>
+        <p style="font-size: 20px; text-align: justify" >
+            When there are no symptoms and no sign of the disease, the condition is called a remission. The term "no evidence of disease" (NED) may also be used to describe this situation.
+            <br><br>
+            Both a transient and permanent remission are possible. A lot of individuals worry that the cancer may return as a result of this uncertainty. A lot of remissions, however, are permanent.
+            <br><br>
+            Cancer is said to as recurrent if it returns after the initial therapy. It could return in the same location (known as a local recurrence), close by (regional recurrence), or in another location (distant recurrence).
+            <br><br>
+            Depending on the molecular characteristics of the cancer and how the patient's body is responding overall, the treatment plan for a recurrence may include the therapies mentioned above, such as surgery, radiation therapy, chemotherapy, immunotherapy, or targeted therapy. The treatment choices for cancer that returns are typically the same as those for cancer that has spread to other organs. 
+            <br><br>
+            People with recurring cancer can feel feelings like anxiety or scepticism. 
+          </p>
+    </section>
+
+    <section class="about" id="about">
+        <h3 style="font-size: 30px;"><u>Upon Failure of Therapy for Colorectal Cancer</u></h3><br>
+        <p style="font-size: 20px; text-align: justify" >
+            Cancer patients are not always able to recover. Cancer may be referred to as advanced or terminal if it cannot be treated or managed.
+            <br><br>
+            Stressful as this news is, some people find it challenging to talk about advanced cancer. The medical staff is available to serve patients and their families and has the necessary training, experience, and knowledge to do so. It is crucial to make sure a person is physically at ease, pain-free, and emotionally supported.
+            <br><br>
+            Hospice care could be an option for those with advanced cancer who have less than six months to live. The goal of hospice care is to give those whose lives are about to end the best quality of life possible. For many families, living at home is a practical choice thanks to nursing care and specialised equipment.
+            <br><br>
+            Many people require support to help them deal with the grief after a loved one passes away. 
+          </p>
+    </section>
+
+    <br><br>
+    
+    <footer>
+      <div>
+        <span>Jaypee Institute of Information Technology</span>
+        <span class="link">
+            <a href="#">Home</a>
+            <a href="contact.html">Contact Us</a>
+        </span>
+      </div>
+    </footer>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+              myDropdown.classList.remove('show');
+            }
+          }
+        }
+        </script>
+  </body>
+</html>

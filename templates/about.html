@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    {% load static %}
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/en/5/56/Logo-jiit.png"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> COLORECTAL CANCER DATABASE </title>
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+}
+
+.navbar {
+  display: flex;
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.navbar input#menu-toggler {
+  display: none;
+}
+
+.navbar #hamburger-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .all-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .all-links li {
+  position: relative;
+  list-style: none;
+}
+
+.navbar .logo a {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+header a, footer a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #fff;
+  height: 100%;
+  padding: 20px 0;
+  display: inline-block;
+}
+
+header a:hover, footer a:hover {
+  color: #ddd;
+}
+
+.homepage {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% );
+  background-position: center 65%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.homepage .content {
+  display: flex;
+  height: 85%;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepage .content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.homepage .content .text {
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content a {
+  color: #000;
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #fff;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.3);
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0 0;
+}
+
+section h2 {
+  font-size: 2rem;
+}
+
+section > p {
+  text-align: center;
+}
+
+section .cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-top: 50px;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+section.about {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.about .company-info {
+  margin-top: 30px;
+}
+
+.about h3 {
+  margin: 30px 0 10px;
+}
+
+.about .team {
+  text-align: left;
+  width: 100%;
+}
+
+.about .team ul {
+  padding-left: 20px;
+}
+
+section .cards .card {
+  background: #fff;
+  padding: 40px 15px;
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 40px;
+  width: calc(100% / 3 - 30px);
+  text-align: center;
+}
+
+.portfolio .cards .card {
+  padding: 0 0 20px;
+}
+
+.services .card img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.portfolio .card img {
+  width: 100%;
+  padding-bottom: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.cards .card p {
+  padding: 0 15px;
+  margin-top: 5px;
+}
+
+.about .row {
+  padding: 0 10px;
+}
+
+.contact .row {
+  margin: 60px 0 90px;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact .row .col {
+  padding: 0 10px;
+  width: calc(100% / 2 - 50px);
+}
+
+.contact .col p {
+  margin-bottom: 10px;
+}
+
+.contact .col p i {
+  color: #7a7a7a;
+  margin-right: 10px;
+}
+
+.contact form input {
+  height: 45px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #bfbfbf;
+}
+
+.contact form textarea {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  height: 150px;
+  outline: none;
+  resize: vertical;
+  border: 1px solid #bfbfbf;
+}
+
+.contact form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #333;
+  transition: 0.2s ease;
+}
+
+.contact form button:hover {
+  background: #525252;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+  padding: 20px 0;
+}
+
+footer div {
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer span {
+  color: #fff;
+}
+
+footer a {
+  padding: 0;
+}
+
+@media screen and (max-width: 860px) {
+  .navbar .all-links {
+    position: fixed;
+    left: -100%;
+    width: 300px;
+    display: block;
+    height: 100vh;
+    top: 75px;
+    background: #333;
+    transition: left 0.3s ease;
+  }
+
+  .navbar #menu-toggler:checked~.all-links {
+    left: 0;
+  }
+
+  .navbar .all-links li {
+    font-size: 18px;
+  }
+
+  .navbar #hamburger-btn {
+    display: block;
+  }
+
+  section > p {
+    text-align: center;
+  }
+
+  section .cards .card {
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 30px;
+  }
+
+  .homepage .content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .homepage .content .text {
+    font-size: 17px;
+  }
+
+  .content a {
+    font-size: 17px;
+    padding: 9px 20px;
+  }
+
+  .contact .row {
+    flex-direction: column;
+  }
+
+  .contact .row .col {
+    width: 100%;
+  }
+
+  .contact .row .col:last-child {
+    margin-top: 40px;
+  }
+
+  footer a {
+    height: 0;
+  }
+}
+
+.dropdown {
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: transparent;
+  }
+  
+  .show {
+    display: block;
+  }
+
+@media screen and (max-width: 560px) {
+  section .cards .card {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+</style>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">CRCMPDDB</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </label>
+        <ul class="all-links">
+          <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()"><a href="home.html">Home</a>
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="about.html">About</a>
+    <a href="stages.html"> Stages</a>
+    <a href="factors.html">Factors</a>
+    <a href="medical.html">Medical Conditions</a>
+    <a href="role.html">Role of Medicinal Plants</a>
+  </div>
+</div> 
+<li><a href="family.html">CRC Medicinal plant <br> & its basic taxonomy</a></li>
+<li><a href="genome.html">CRC_Genome</a></li>
+<li><a href="drug.html">Natural Drugs</a></li>
+<li><a href="metabolite.html">Medicinal plant <br> & its metabolites </a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+</header>
+
+    <section class="about" id="about"><br><br>
+      <h2><u>INTRODUCTION</u></h2><br>
+      <p style="font-size: 20px; text-align: justify">  The large intestine (colon) is where colon cancer usually develops. The colon is the last section of the digestive system.
+
+        Although it can occur at any age, colon cancer typically affects older adults. On the inside of the colon, it typically starts as tiny polyps—clumps of cells that aren't cancerous (benign). Some of these polyps may develop into colon cancer in the future.Small polyps might not even cause any symptoms. In order to identify and remove polyps before they develop into cancer, doctors advise routine screening tests to help prevent colon cancer.
+        There are numerous treatments available to help control colon cancer, such as surgery, radiation therapy, and medication such as chemotherapy, targeted therapy, and immunotherapy.
+        The term colorectal cancer, which combines the terms colon cancer and rectal cancer (which starts in the rectum), is sometimes used to refer to colon cancer.
+        <img style="width: 700px; height:600px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/colon_cancer.jpg' %}" >
+        </p>
+    </section>
+
+    <section class="about" id="about"><br><br>
+        <h2><u>The Colon and Rectum</u></h2><br>
+        <ul style="font-size: 20px; text-align: justify">The large intestine (or large bowel), which is a component of the digestive system, also known as the gastrointestinal (GI) system, is made up of the colon and rectum. The colon, a muscular tube that is about 5 feet (1.5 metres) long, makes up the majority of the large intestine. The names of the colonic sections reflect the direction in which food passes through them.  <br><br>
+          <li>The ascending colon is the name of the first section. Undigested food enters through a pouch called the cecum at the beginning of the digestive process. On the right side of the abdomen (belly), it continues upward. </li>
+          <li>The transverse colon is the second segment. It crosses the body from side to side, right to left. </li>
+          <li>Due to the fact that the third section descends (moves down) on the left, it is known as the descending colon.</li>
+          <li>Because of its "S" shape, the fourth section is referred to as the sigmoid colon. The rectum connects to the anus after the sigmoid colon joins it. </li>
+          <br>The proximal colon is made up of the ascending and transverse sections. The term "distal colon" refers to the descending and sigmoid colon.
+        </ul>
+    </section>
+
+    <section class="about" id="about"><br><br>
+        <h2><u>Roles of Colon and Rectum </u></h2><br>
+        <p style="font-size: 20px; text-align: justify">Following passage through the small intestine (small bowel), the colon absorbs water and salt from the remaining food material. The remaining waste material from the colon enters the rectum, the stomach's last six inches (15 cm) of digestive tract. In order for it to pass through the anus, it is kept there. The anus is surrounded by ring-shaped muscles, or sphincters, that prevent stool from exiting until they relax during a bowel movement.
+          <img style="width: 650px; height:500px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/Colon.jpg' %}" >
+        </p>
+    </section>
+
+    <section class="about" id="about"><br><br>
+      <h2><u>What Triggers Colon Cancer?</u></h2><br>
+      <ul style="font-size: 20px; text-align: justify">Colon cancer develops when cells grow and divide uncontrollably, just like all other forms of cancer. Every cell in the body is constantly growing, dividing, and dying. The body maintains its health and continues to function properly in this manner. When colon and rectum lining cells have colon cancer, they continue to grow and divide even though they should be dying. These cancerous cells could originate from colon polyps.
+        <br>The inner lining of the colon or rectum is where the majority of colorectal cancers first appear as a growth. Polyps are the name given to these growths.
+        <br>Over time, some polyp types can develop into cancer, but not all polyps do. Depending on the type of polyp, there is a chance that it will develop into cancer. There are various kinds of polyps.
+        <br><br>
+          <li><b><i>Adenomatous polyps : </i></b>These polyps can occasionally develop into cancer. Adenomas are referred to as a pre-cancerous condition as a result. Tubular, villous, and tubulovillous are the three different types of adenomas. </li>
+          <li><b><i>Hyperplastic polyps and inflammatory polyps : </i></b>Hyperplastic and inflammatory polyps are more frequent, but they are typically not precancerous. Large (greater than 1 cm) hyperplastic polyps may necessitate more frequent colonoscopies for colorectal cancer screening. </li>
+          <li><b><i>Sessile serrated polyps(SSP) and traditional serrated adenomas(TSA) : </i> </b>As a result of their increased risk of colorectal cancer, these polyps are frequently treated like adenomas. </li>
+          <img style="width: 500px; height:400px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/polyps.jpg' %}">
+      </ul> 
+    </section>
+
+    <section class="about" id="about"><br><br>
+      <h2><u>The Method Of Colorectal Cancer Spread</u></h2><br>
+      <p style="font-size: 20px; text-align: justify">If cancer develops in a polyp, it may eventually spread to the colon or rectum's wall. There are several layers to the colon and rectum's wall. The mucosa, the innermost layer, is where colorectal cancer begins and can spread through any combination of the other layers.
+        When cancer cells are embedded in the wall, they have the potential to develop into blood vessels or lymph vessels, which are tiny passageways that remove waste and fluid. They can then move to nearby lymph nodes or to other parts of the body that are far away.
+        The depth to which a colorectal cancer has penetrated the wall and whether it has spread outside the colon or rectum determine the cancer's stage. 
+        <img style="width: 700px; height:600px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/layers_of_colon_wall.jpeg' %}">
+      </p>
+    </section>
+
+    <section class="about" id="about"><br><br>
+      <h2><u>Types of Colon and Rectal Cancer </u></h2><br>
+      <ul style="font-size: 20px; text-align: justify">Adenocarcinomas are the majority of colorectal cancers. Cells that produce mucus to lubricate the interior of the colon and rectum are where these cancers begin to spread. Physicians almost always refer to this type of colorectal cancer when discussing the disease. Signet ring and mucinous adenocarcinoma subtypes may have a worse prognosis than other adenocarcinoma subtypes.  
+        <br>The colon and the rectum are two additional, much less common locations for tumour initiation. A few of these are:
+        <br><br>
+          <li>Cancerous tumours. These develop in the intestine from unique hormone-producing cells. </li>
+          <li>The interstitial cells of Cajal, which are unique cells found in the colon's wall, are the origin of gastrointestinal stromal tumours (GISTs). Some are not cancerous but benign. These tumours can develop anywhere along the digestive tract, but the colon is rarely where they do.</li>
+          <li>Immune system cell cancers are known as lymphomas. However, they can also begin in the colon, rectum, or other organs. They typically begin in lymph nodes. </li>
+        <li>In the wall of the colon and rectum, sarcomas can begin in blood vessels, muscle layers, or other connective tissues. Colon or rectal sarcomas are uncommon. </li>
+        <img style="width: 700px; height:400px; display: block; margin-left: auto; margin-top: 1cm; margin-right: auto;text-align: center;" src="{% static 'images/types.jpeg' %}">
+         </ul> 
+    </section>
+    
+    <br><br>
+    
+    <footer>
+      <div>
+        <span>Jaypee Institute of Information Technology</span>
+        <span class="link">
+            <a href="#">Home</a>
+            <a href="contact.html">Contact Us</a>
+        </span>
+      </div>
+    </footer>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+              myDropdown.classList.remove('show');
+            }
+          }
+        }
+        </script>
+  </body>
+</html>

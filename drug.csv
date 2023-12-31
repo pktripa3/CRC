@@ -1,0 +1,100 @@
+﻿Drug_ID_MESH,Drug,Source_Plant,Mechanism_of_action,chemical_structure,PMID
+C016392,"3,3'-Diindolylmethane","Cruciferous vegetables (Broccoli, Cabbage)","Modulates estrogen metabolism, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/3071#section=3D-Conformer,3071
+C007845,6-Gingerol,Ginger (Zingiber officinale),"Inhibits cell proliferation, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/442793#section=3D-Conformer,442793
+C006452,Allicin,Garlic (Allium sativum),"Induces cell cycle arrest, apoptosis, and anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/65036#section=3D-Conformer,"	65036"
+D000089002,Andrographis Paniculata,Andrographis paniculata,"Inhibits cell proliferation, induces apoptosis",,482042684
+C030419,Andrographolide,Andrographis paniculata,"Inhibits cell growth, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5318517#section=3D-Conformer,5318517
+C053442,Annonacin,Custard Apple (Annona muricata),"Inhibits cell growth, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/354398#section=2D-Structure,354398
+D047310,Apigenin,"Parsley, Celery, Chamomile","Induces apoptosis, anti-inflammatory, inhibits angiogenesis",https://pubchem.ncbi.nlm.nih.gov/compound/5280443#section=3D-Conformer,5280443
+C071942,Arctigenin,Greater Burdock (Arctium lappa),"Inhibits cell proliferation, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/64981#section=3D-Conformer,64981
+D037621,Artemisinin,Sweet Wormwood (Artemisia annua),Induces apoptosis in cancer cells by producing free radicals,https://pubchem.ncbi.nlm.nih.gov/compound/68827#section=3D-Conformer,68827
+C000713175,Artichoke Extract,Artichoke (Cynara scolymus),"Induces apoptosis, anti-inflammatory, inhibits cell growth",NA,135312255
+C005948,Astaxanthin,"Microalgae, Salmon, Krill","Antioxidant, anti-inflammatory, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/5281224#section=3D-Conformer,5281224
+C027492,Astragalus Extract,Astragalus membranaceus,"Enhances immune function, inhibits cell proliferation",NA,482041556
+C006680,Baicalein,Scutellaria baicalensis,"Induces apoptosis, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/5281605#section=3D-Conformer,5281605
+C012765,Bakuchiol,Psoralea corylifolia (Bakuchiol),"Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/5468522#section=3D-Conformer,5468522
+D001599,Berberine,Goldenseal (Hydrastis canadensis),Inhibits cell proliferation and induces cell cycle arrest,https://pubchem.ncbi.nlm.nih.gov/compound/2353#section=3D-Conformer,2353
+D047071,Beta-glucans,"Oats, Barley, Medicinal Mushrooms","Immunomodulatory, anti-inflammatory, inhibits angiogenesis",https://pubchem.ncbi.nlm.nih.gov/compound/439262#section=3D-Conformer,439262
+D050858,Betalains,"Beets, Cacti","Inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/56841626#section=3D-Conformer,56841626
+C002503,Betulin,Birch Bark (Betula alba),"Induces apoptosis, anti-angiogenic, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/72326#section=3D-Conformer,72326
+D000094062,Betulinic Acid,"Various plants, e.g., Betula alba","Induces apoptosis, inhibits angiogenesis",https://pubchem.ncbi.nlm.nih.gov/compound/64971#section=3D-Conformer,64971
+C054625,Boswellic Acid,Boswellia serrata (Indian Frankincense),"Inhibits inflammation, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/168928#section=3D-Conformer,168928
+D002166,Camptothecin,Camptotheca acuminata (Happy Tree),"Inhibits DNA topoisomerase I, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/24360#section=3D-Conformer,24360
+C010695,Cannabichromene (CBC),Cannabis sativa,"Inhibits cell proliferation, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/30219#section=3D-Conformer,30219
+D002185,Cannabidiol (CBD),Cannabis sativa,"Induces apoptosis, inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/644019#section=3D-Conformer,644019
+C037036,Cannabigerol (CBG),Cannabis sativa,"Inhibits cell growth, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/5315659#section=3D-Conformer,5315659
+C050414,Celastrol,Thunder God Vine (Tripterygium wilfordii),"Induces apoptosis, inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/122724#section=3D-Conformer,122724
+C559814,Celery Seed Extract,Celery (Apium graveolens),"Induces apoptosis, anti-inflammatory",NA,482038123
+C016299,Chelerythrine,Bloodroot (Sanguinaria canadensis),"Induces apoptosis, inhibits cell growth, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/2703#section=3D-Conformer,2703
+C043561,Chrysin,Passionflower (Passiflora incarnata),"Induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5281607#section=3D-Conformer,5281607
+C058120,Cordycepin,Cordyceps sinensis (Medicinal mushroom),"Inhibits cell proliferation, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/6303#section=3D-Conformer,6303
+C037886,Cryptotanshinone,Danshen (Salvia miltiorrhiza),"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/160254#section=3D-Conformer,160254
+D003474,Curcumin,Turmeric (Curcuma longa),"Inhibits NF-κB, COX-2, and other pro-inflammatory pathways",https://pubchem.ncbi.nlm.nih.gov/compound/969516#section=3D-Conformer,969516
+C462279,Cyanidin-3-Glucoside,"Blackberries, Cherries","Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/197081#section=3D-Conformer,197081
+C107676,Deguelin,African Peyote (Marsdenia cundurango),"Induces apoptosis, inhibits cell proliferation, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/107935#section=3D-Conformer,107935
+C028009,Diallyl Disulfide,Garlic (Allium sativum),"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/16590#section=3D-Conformer,16590
+C019357,Dioscin,Wild Yam (Dioscorea villosa),"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/119245#section=2D-Structure,119245
+C039602,Diosmetin,Citrus fruits,"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5281612#section=3D-Conformer,5281612
+C045651,EGCG (Epigallocatechin gallate),Green Tea (Camellia sinensis),"Inhibits VEGF and EGFR pathways, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/65064#section=3D-Conformer,65064
+D004610,Ellagic Acid,"Berries, Nuts","Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/5281855#section=3D-Conformer,5281855
+C010945,Embelin,False Black Pepper (Embelia ribes),"Induces apoptosis, inhibits NF-kB signaling",https://pubchem.ncbi.nlm.nih.gov/compound/3218#section=3D-Conformer,3218
+D004642,Emodin,Japanese Knotweed (Reynoutria japonica),"Induces apoptosis, inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/3220#section=3D-Conformer,3220
+D002392,Epicatechin,"Green tea, Cocoa","Inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/72276#section=3D-Conformer,72276
+C576796,Epigallocatechin (EGC),Green Tea (Camellia sinensis),"Inhibits cell proliferation, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/72277#section=3D-Conformer,72277
+D004928,Escin,Horse chestnut (Aesculus spp.),"Inhibits cell growth, anti-inflammatory, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/16211024#section=2D-Structure,16211024
+D004929,Esculin,Horse Chestnut (Aesculus hippocastanum),"Inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5281417#section=3D-Conformer,5281417
+C018541,Falcarinol,Carrot (Daucus carota),"Induces apoptosis, inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5281149#section=3D-Conformer,5281149
+C017875,Fisetin,"Strawberries, Apples","Inhibits cell proliferation, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5281614#section=3D-Conformer,5281614
+C007789,Fucoidan,"Brown seaweed (e.g., Fucus vesiculosus)","Anti-inflammatory, anti-angiogenic, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/204#section=3D-Conformer,204
+D019833,Genistein,Soybeans,"Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/5280961#section=3D-Conformer,5280961
+C007845,Gingerol,Ginger (Zingiber officinale),"Inhibits cell proliferation, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/442793#section=3D-Conformer,442793
+C063170,Ginkgo Biloba Extract,Ginkgo Biloba,"Anti-inflammatory, inhibits cell proliferation",NA,472386109
+D036145,Ginsenoside,Ginseng (Panax ginseng),Inhibits angiogenesis and modulates immune response,https://pubchem.ncbi.nlm.nih.gov/compound/3086007#section=3D-Conformer,3086007
+D006072,Gossypol,Cotton plant (Gossypium spp.),"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/3503#section=3D-Conformer,3503
+D031041,Graviola (Soursop),Annona muricata,"Induces apoptosis, inhibits cell proliferation, anti-inflammatory",NA,482019212
+C527126,Green Tea Extract,Camellia sinensis,Contains polyphenols that inhibit cancer cell growth and induce apoptosis,https://pubchem.ncbi.nlm.nih.gov/compound/72276#section=3D-Conformer,72276
+C023617,Guggulsterone,Indian Bedellium (Commiphora wightii),"Induces apoptosis, inhibits cell growth",https://pubchem.ncbi.nlm.nih.gov/compound/6450278#section=3D-Conformer,6450278
+D032064,Hedyotis Diffusa Extract,Hedyotis diffusa (Oldenlandia diffusa),"Induces apoptosis, inhibits cell proliferation",NA,471431189
+C013015,Hesperetin,Citrus fruits,"Induces apoptosis, anti-inflammatory, inhibits cell growth",https://pubchem.ncbi.nlm.nih.gov/compound/72281#section=3D-Conformer,72281
+C005499,Honokiol,Magnolia bark (Magnolia officinalis),"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/72303#section=3D-Conformer,72303
+C016517,Indole-3-carbinol (I3C),"Cruciferous vegetables (Broccoli, Cabbage)","Modulates estrogen metabolism, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/3712#section=3D-Conformer,3712
+C005134,Juglone,Walnut (Juglans regia),"Induces apoptosis, inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/3806#section=3D-Conformer,3806
+C511993,Kaempferol,"Kale, Spinach, Tea","Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/5280863#section=3D-Conformer,5280863
+C051436,Kaurenoic Acid,Brazilian Red Propolis (Dalbergia ecastaphyllum),"Induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/73062#section=3D-Conformer,73062
+C001546,Limonin,Citrus fruits,"Inhibits cell proliferation, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/179651#section=3D-Conformer,179651
+D014975,Lutein,"Spinach, Kale, Marigold","Antioxidant, anti-inflammatory, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/5281243#section=3D-Conformer,5281243
+D047311,Luteolin,Various fruits and vegetables,"Inhibits cell proliferation, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5280445#section=3D-Conformer,5280445
+D000077276,Lycopene,"Tomatoes, Watermelon","Antioxidant, anti-inflammatory, inhibits cell growth",https://pubchem.ncbi.nlm.nih.gov/compound/446925#section=2D-Structure,446925
+C040015,Myricetin,Various fruits and vegetables,"Inhibits cell proliferation, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5281672#section=3D-Conformer,5281672
+C005273,Naringenin,Citrus fruits,"Anti-inflammatory, antioxidant, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/439246#section=3D-Conformer,439246
+C042198,Nimbolide,Neem (Azadirachta indica),"Induces apoptosis, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/12313376#section=3D-Conformer,12313376
+D009828,Oleanolic Acid,"Olive oil, Garlic, Thyme","Induces apoptosis, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/10494#section=3D-Conformer,10494
+C002669,Parthenolide,Feverfew (Tanacetum parthenium),"Induces apoptosis, anti-inflammatory, inhibits angiogenesis",https://pubchem.ncbi.nlm.nih.gov/compound/7251185#section=3D-Conformer,7251185
+D059808,Polyphenols,"Green Tea, Red Grapes, Berries","Antioxidant, anti-inflammatory, inhibits cell growth",NA,135334832
+C472086,Polyphenon E,Green Tea,"Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/substance/483926591#section=2D-Structure,483926591
+C000712310,Pomegranate Extract,Pomegranate,"Inhibits angiogenesis, induces apoptosis, anti-inflammatory",NA,404771772
+C102768,Psoralidin,Psoralea corylifolia (Bakuchiol),"Inhibits cell proliferation, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/5281806#section=3D-Conformer,5281806
+C107773,Pterostilbene,Blueberries,"Inhibits cell proliferation, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5281727#section=3D-Conformer,5281727
+C024070,Pycnogenol,Pine bark,"Induces apoptosis, anti-inflammatory, inhibits angiogenesis",NA,482027301
+D036702,Quassinoid Compounds,Quassia amara,"Inhibits cell proliferation, anti-inflammatory, induces apoptosis",NA,1080735
+D011794,Quercetin,"Onions, Apples",Inhibits angiogenesis and induces apoptosis,https://pubchem.ncbi.nlm.nih.gov/compound/5280343#section=3D-Conformer,5280343
+D000077185,Resveratrol,Red Grapes (Vitis vinifera),"Activates SIRT1, an anti-inflammatory and anti-oxidative protein",https://pubchem.ncbi.nlm.nih.gov/compound/445154#section=3D-Conformer,445154
+C009172,Salidroside,Rhodiola rosea,"Inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/159278#section=3D-Conformer,159278
+C005705,Sanguinarine,Bloodroot (Sanguinaria canadensis),"Induces apoptosis, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/5154#section=3D-Conformer,5154
+C484876,Scutellarein,Scutellaria baicalensis,"Inhibits cell growth, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/5281697#section=3D-Conformer,5281697
+D000077385,Silibinin,Milk Thistle (Silybum marianum),"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/31553#section=3D-Conformer,31553
+D012838,Silymarin,Milk Thistle (Silybum marianum),"Induces apoptosis, anti-inflammatory, inhibits cell growth",https://pubchem.ncbi.nlm.nih.gov/compound/5213#section=3D-Conformer,5213
+NA,Sophoranol,Sophora flavescens,"Inhibits cell growth, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/12442899#section=3D-Conformer,12442899
+D000093842,Sophoridine,Sophora flavescens,"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/165549#section=3D-Conformer,165549
+C016766,Sulforaphane,Broccoli,Activates phase II detoxification enzymes and inhibits HDACs,https://pubchem.ncbi.nlm.nih.gov/compound/5350#section=3D-Conformer,5350
+D017239,Taxol (Paclitaxel),Pacific yew tree (Taxus brevifolia),"Inhibits cell division, induces apoptosis",https://pubchem.ncbi.nlm.nih.gov/compound/36314#section=2D-Structure,36314
+C003466,Thymoquinone,Black Seed (Nigella sativa),"Induces apoptosis, inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/10281#section=3D-Conformer,10281
+D014053,Tomatine,Tomatoes,"Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/28523#section=2D-Structure,28523
+C001899,Triptolide,Thunder God Vine (Tripterygium wilfordii),"Induces apoptosis, inhibits cell proliferation, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/107985#section=3D-Conformer,107985
+C084079,Triptonide,Thunder God Vine (Tripterygium wilfordii),"Induces apoptosis, inhibits angiogenesis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/65411#section=3D-Conformer,65411
+D000097245,Ursolic Acid,"Apple peels, Rosemary","Inhibits cell proliferation, induces apoptosis, anti-inflammatory",https://pubchem.ncbi.nlm.nih.gov/compound/64945#section=3D-Conformer,64945
+D014750,Vincristine,Periwinkle (Catharanthus roseus),"Inhibits microtubule formation, disrupting cell division",https://pubchem.ncbi.nlm.nih.gov/compound/5978#section=2D-Structure,5978
+C009684,Withaferin A,Ashwagandha (Withania somnifera),"Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/265237#section=3D-Conformer,265237
+D054358,Withanolides,Ashwagandha (Withania somnifera),"Induces apoptosis, anti-inflammatory, inhibits cell growth",https://pubchem.ncbi.nlm.nih.gov/compound/329485#section=2D-Structure,329485
+C104536,Xanthohumol,Hops (Humulus lupulus),"Induces apoptosis, anti-inflammatory, inhibits cell proliferation",https://pubchem.ncbi.nlm.nih.gov/compound/639665#section=3D-Conformer,639665
+C554087,Piceatannol,Grapes,"Inhibits cell proliferation, induces apoptosis, anti-angiogenic",https://pubchem.ncbi.nlm.nih.gov/compound/667639#section=3D-Conformer,667639
