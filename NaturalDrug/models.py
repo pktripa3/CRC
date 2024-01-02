@@ -3,7 +3,7 @@ from django.db import connections
 
 # Create your models here.
 class Drug_crc(models.Model):
-    Drug_ID_MESH = models.IntegerField()
+    Drug_ID_MESH = models.CharField(max_length=200)
     Drug = models.CharField(max_length=200)
     Source_Plant = models.TextField()
     Mechanism_of_action = models.TextField()

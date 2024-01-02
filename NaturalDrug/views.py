@@ -4,7 +4,7 @@ from django.views.generic import ListView
 from django.db.models import Q
 from .models import Drug_crc
 
-#metabolite view
+#drugview
 class drug_view(ListView):
     template_name= "drug.html"
 
