@@ -91,7 +91,7 @@ header a:hover, footer a:hover {
 }
 
 .homepage {
-  height: 55vh;
+  height: 70vh;
   width: 100%;
   position: relative;
   background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% );
@@ -303,7 +303,7 @@ footer {
   display: flex;
   justify-content: center;
   background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 footer div {
@@ -638,33 +638,32 @@ form input:focus {
     </div>
   </div>
   </section>
-    <section class="homepage" id="home">
-      <div class="tableContainer">
-        <table border="1" class="thelongone">
-            <tr>
-              <th>ID</th>
-                <th> Plant Name </th>
-                <th> Metabolites</th>
-                <th> Pathway involved in CRC</th>
-                <th>References</th>
-                <th>Citation</th>
-            </tr>
-            <!-- {% for data in object_list %} -->
-            <tr>
-              <td>{{data.id}}</td>
-                <td>{{ data.Plant_Name}}</td>
-                <td>{{ data.Metabolites}}</td>
-                <td>{{ data.Pathway}}</td>
-                <td><a href='{{data.References}}'>References</a></td>
-                <td>{{data.Citation}}</td>
-            </tr>
-            <!-- {% endfor %} -->
-        </table>
-      </div> 
-  </div>
+
+  <div class="tableContainer">
+    <table border="1" class="thelongone">
+        <tr>
+          <th>ID</th>
+            <th> Plant Name </th>
+            <th> Metabolites</th>
+            <th> Pathway involved in CRC</th>
+            <th>References</th>
+            <th>Citation</th>
+        </tr>
+        <!-- {% for data in object_list %} -->
+        <tr>
+          <td>{{data.id}}</td>
+            <td>{{ data.Plant_Name}}</td>
+            <td>{{ data.Metabolites}}</td>
+            <td>{{ data.Pathway}}</td>
+            <td><a href='{{data.References}}'>References</a></td>
+            <td>{{data.Citation}}</td>
+        </tr>
+        <!-- {% endfor %} -->
+    </table>
+  </div> 
 </div>
-</section>
- 
+</div>
+ <br><br><br>
     <footer>
       <div>
         <span>Jaypee Institute of Information Technology</span>
