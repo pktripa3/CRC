@@ -2,7 +2,7 @@
     "builds": [{
         "src": "colorectal/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "3.11" }
+        "config": { "maxLambdaSize": "15mb", "runtime": "3.12" }
     }],
     "routes": [{
         "src": "/(.*)",
