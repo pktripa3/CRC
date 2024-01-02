@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-8kn_74yee77wx&u8io)-2^a3$r3$^wx!bww7)c+i=cxy8%1(f^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://crcmm-db.onrender.com']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
