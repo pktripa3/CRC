@@ -20,7 +20,6 @@ from geno.views import genome_view
 from NaturalDrug.views import drug_view
 from fam.views import fam_view
 from metabol.views import metabolite_view
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from phase.views import home_view, about_view, contact_view, medical_view, factors_view, role_view, stages_view
 
 urlpatterns = [
@@ -50,4 +49,3 @@ urlpatterns = [
     path('',home_view)       
 ]
 
-urlpatterns += staticfiles_urlpatterns()
