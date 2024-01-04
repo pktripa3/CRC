@@ -1,6 +1,6 @@
-from msilib.schema import ListView
-from django.shortcuts import render
 from django.views.generic import ListView
+from django.shortcuts import render
+# from django.views.generic import ListView
 from django.db.models import Q
 from .models import fam_crc
 #genome view
