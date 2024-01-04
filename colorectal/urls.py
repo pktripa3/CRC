@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from geno.views import genome_view
+from geno.views import GenomeView
 from NaturalDrug.views import drug_view
 from fam.views import fam_view
 from metabol.views import metabolite_view
@@ -32,17 +32,17 @@ urlpatterns = [
     path ('factors.html', factors_view ,name="factors"),
     path ('role.html', role_view ,name="role"),
     path ('stages.html', stages_view ,name="stages"),
-    path('genome.html', genome_view.as_view(), name="genome"),
+    path('genome.html', GenomeView.as_view(), name="genome"),
     path('drug.html', drug_view.as_view(), name="drug"),
     path('family.html', fam_view.as_view(), name="family"),
     path('metabolite.html', metabolite_view.as_view(), name="metabolite"),
-    path('genome/',genome_view.as_view() ,name='genome'),
+    path('genome/',GenomeView.as_view() ,name='genome'),
     path('genome/',drug_view.as_view() ,name='drug'),
     path('genome/',fam_view.as_view() ,name='family'),
     path('genome/',metabolite_view.as_view() ,name='metabolite'),
     path('home/about.html',about_view,name='about'),
     path('home/home.html',home_view,name='home'),
-    path('home/genome.html',genome_view.as_view(),name='genome'),
+    path('home/genome.html',GenomeView.as_view(),name='genome'),
     path('home/drug.html',drug_view.as_view(),name='drug'),
     path('home/family.html',fam_view.as_view(),name='family'),
     path('home/metabolite.html',metabolite_view.as_view(),name='metabolite'),
