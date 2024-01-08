@@ -91,10 +91,10 @@ header a:hover, footer a:hover {
 }
 
 .homepage {
-  height: 100vh;
+  height: auto;
   width: 100%;
   position: relative;
-  background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% );
+  background : url('{{ STATIC_URL }}/static/images/bg2.png');
   background-position: center 65%;
   background-size: cover;
   background-attachment: fixed;
@@ -120,7 +120,7 @@ header a:hover, footer a:hover {
 }
 
 .homepage .content h1 {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -443,7 +443,8 @@ footer a {
   <body>
     <header>
       <nav class="navbar">
-        <h2 class="logo"><a href="#">CRCMPDDB</a></h2>
+        <img style="height: 100px; width: 100px; border-radius:5px; padding: 1rem  1rem; margin-left:1 rem; left: 1rem; " src="{% static 'images/JIIT.png' %}">
+        <h2 class="logo"><a href="home.html">CRCMMDB</a></h2>
         <input type="checkbox" id="menu-toggler">
         <label for="menu-toggler" id="hamburger-btn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
@@ -453,7 +454,7 @@ footer a {
         </label>
         <ul class="all-links">
           <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction()"><a href="home.html">Home</a>
+  <button class="dropbtn" onclick="myFunction()">Home
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content" id="myDropdown">
@@ -464,10 +465,10 @@ footer a {
     <a href="role.html">Role of Medicinal Plants</a>
   </div>
 </div> 
-<li><a href="family.html">CRC Medicinal plant <br> & its basic taxonomy</a></li>
-<li><a href="genome.html">CRC_Genome</a></li>
+<li><a href="family.html">Medicinal plant & Taxonomy</a></li>
+<li><a href="genome.html">Gene & Genome</a></li>
 <li><a href="drug.html">Natural Drugs</a></li>
-<li><a href="metabolite.html">Medicinal plant <br> & its metabolites </a></li>
+<li><a href="metabolite.html">Metabolites </a></li>
 <li><a href="contact.html">Contact Us</a></li>
 </ul>
 </nav>

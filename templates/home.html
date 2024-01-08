@@ -90,10 +90,10 @@ header a:hover, footer a:hover {
 }
 
 .homepage {
-  height: 100vh;
+  height: auto;
   width: 100%;
   position: relative;
-  background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% );
+  background : url('{{ STATIC_URL }}/static/images/bg2.png');
   background-position: center 65%;
   background-size: cover;
   background-attachment: fixed;
@@ -119,7 +119,7 @@ header a:hover, footer a:hover {
 }
 
 .homepage .content h1 {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -151,6 +151,7 @@ header a:hover, footer a:hover {
   color: #fff;
   background: rgba(255,255,255,0.3);
 }
+
 
 section {
   display: flex;
@@ -297,6 +298,113 @@ section .cards .card {
   background: #525252;
 }
 
+/*FAQs dropdown*/
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
+.container4 {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 48rem;
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded='true'] {
+  border-bottom: 1px solid #03b5d2;
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+}
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion button[aria-expanded='true'] {
+  color: #03b5d2;
+}
+.accordion button[aria-expanded='true'] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+
+/*footer*/
 footer {
   width: 100%;
   display: flex;
@@ -355,7 +463,7 @@ footer a {
   }
 
   .homepage .content h1 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 10px;
   }
@@ -443,7 +551,8 @@ footer a {
   <body>
     <header>
       <nav class="navbar">
-        <h2 class="logo"><a href="#">CRCMPDDB</a></h2>
+        <img style="height: 100px; width: 100px; border-radius:5px; padding: 1rem  1rem; margin-left:1 rem; left: 1rem; " src="{% static 'images/JIIT.png' %}">
+        <h2 class="logo"><a href="home.html">CRCMMDB</a></h2>
         <input type="checkbox" id="menu-toggler">
         <label for="menu-toggler" id="hamburger-btn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
@@ -464,10 +573,10 @@ footer a {
     <a href="role.html">Role of Medicinal Plants</a>
   </div>
 </div> 
-<li><a href="family.html">CRC Medicinal plant <br> & its basic taxonomy</a></li>
-<li><a href="genome.html">CRC_Genome</a></li>
+<li><a href="family.html">Medicinal plant & Taxonomy</a></li>
+<li><a href="genome.html">Gene & Genome</a></li>
 <li><a href="drug.html">Natural Drugs</a></li>
-<li><a href="metabolite.html">Medicinal plant <br> & its metabolites </a></li>
+<li><a href="metabolite.html">Metabolites </a></li>
 <li><a href="contact.html">Contact Us</a></li>
 </ul>
 </nav>
@@ -475,10 +584,13 @@ footer a {
 
     <section class="homepage" id="home">
       <div class="content">
-        <div class="text">
-          <h1>Colorectal Cancer Medicinal Plants Drug Database (CRCMPDDB) </h1>
+        <div class="text">     
+          <br>       
+          <h1>Colorectal Cancer Medicinal Plants and Metabolites Database (CRCMMDB)</h1>
           <br>
-          <p style="font-size: 28px;">A comprehensive web medicinal plants and drug database for the CRC cancer</p>
+          <p style="font-size: 28px;"><marquee width="90%" direction="left" height="50px" ><u>A comprehensive web medicinal plants and metabolite and drug database for the CRC cancer</u>
+          </marquee></p>
+          
         </div>
       </div>
     </section>
@@ -490,13 +602,150 @@ footer a {
       <h2 style="font-size: 28px;">Our Objective</h2>
         <p style="font-size: 23px;">To provide a user-friendly,quick-access medicinal plants drug database for colorectal cancer.</p>
     </section>
-    <br><br>
+    <br><br><br>
+
+  
+    <div class="container4">
+      <h2>Frequently Asked Questions</h2><br>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button id="accordion-button-1" aria-expanded="false">
+            <span class="accordion-title">What are some medicinal plants and natural drugs that show promise in colorectal cancer treatment?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Various medicinal plants and natural compounds, such as curcumin (from turmeric), green tea extract, and resveratrol (found in red grapes), have demonstrated potential in colorectal cancer therapy.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-2" aria-expanded="false">
+            <span class="accordion-title">Are there ongoing efforts to uncover new medicinal plants or compounds with potential against colorectal cancer at the genetic level?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, ongoing research focuses on exploring the vast diversity of natural compounds and their genetic interactions to discover novel agents for colorectal cancer treatment.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-3" aria-expanded="false">
+            <span class="accordion-title">What challenges exist in utilizing natural compounds for personalized genomic medicine in colorectal cancer?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Challenges include variability in individual responses, the need for precise dosage determination, and the complexity of the genetic landscape in colorectal cancer patients.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title">How do researchers assess the effectiveness of natural compounds on colorectal cancer genes?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Research involves studying changes in gene expression profiles, analyzing genetic mutations, and employing advanced techniques like next-generation sequencing to understand the molecular impact.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title"> Are there specific genes targeted by these natural compounds?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, natural compounds often target genes like APC, TP53, KRAS, and others associated with colorectal cancer progression, providing a targeted therapeutic approach.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title">Elaborate on the genomic aspects of natural compounds in colorectal cancer treatment?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              The genomic impact involves modulation of gene expression, alteration of signaling pathways, and interference with genetic mutations linked to colorectal cancer development.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title">How do these natural compounds target colorectal cancer at the genetic level?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              These compounds often interact with specific genes involved in colorectal cancer pathways, influencing processes like cell cycle regulation, apoptosis, and inflammation.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title">Is the database going to update in the future?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, we have plans to expand the database's functionalities in the future.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-5" aria-expanded="false">
+            <span class="accordion-title">How many plants and natural drugs are added in the database & what information does database contains?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              About 100 medicinal plants and 100 natural drugs are present in database with their Taxonomy , Gene and Genome and their Metabolomics data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+      <section class="about" id="about">
+      <h2> Graphical Representations </h2><br>
+    <div class="pic">
+      <div>
+        <img style="width: 800px; height:500px ;" src="{% static 'images/hi.png' %}" >
+        <p style="font-size: 30px; text-align: center; margin-bottom: 0cm; "><u>Graphical Abstract</u></p>
+      </div><br>
+      <div >
+        <br><br>
+        <img style="width: 800px; height:400px ;" src="{% static 'images/hello.png' %}" >    
+        <p style="font-size: 30px; text-align: center; margin-bottom: 0cm; "><u>Flowchart & procedure for the collection &<br> integration of CRCMMDB</u></p>
+      </div><br>
+    </div>
+    <div class="pic">
+        <div >
+          <br><br>
+          <img style="width: 800px; height:400px ;" src="{% static 'images/hello2.png' %}" >
+          <p style="font-size: 30px; text-align: center; margin-bottom: 0cm; "><u>The program's data flow diagram</u></p>
+        </div>
+        <div >
+          <br><br>
+          <img style="width: 800px; height:700px ;" src="{% static 'images/' %}" >
+          <p style="font-size: 20px; text-align: center; margin-bottom: 0cm; "><u></u></p>
+        </div>
+      </div>
+    </section>
+    <br><br><br>
 
     <footer>
       <div>
         <span>Jaypee Institute of Information Technology</span>
         <span class="link">
-            <a href="#">Home</a>
+          <a href="#">Top</a>
+            <a href="home.html">Home</a>
             <a href="contact.html">Contact Us</a>
         </span>
       </div>
@@ -518,5 +767,23 @@ footer a {
           }
         }
         </script>
+
+        <script>
+          const items = document.querySelectorAll('.accordion button');
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach((item) => item.addEventListener('click', toggleAccordion));
+</script>
   </body>
 </html>
