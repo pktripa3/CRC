@@ -18,8 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from geno.views import GenomeView
 from NaturalDrug.views import drug_view
-from fam.views import fam_view
-from metabol.views import metabolite_view
+from metabolo.views import metabolo_view
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from phase.views import home_view, about_view, contact_view, medical_view, factors_view, role_view, stages_view
 
@@ -34,18 +33,15 @@ urlpatterns = [
     path ('stages.html', stages_view ,name="stages"),
     path('genome.html', GenomeView.as_view(), name="genome"),
     path('drug.html', drug_view.as_view(), name="drug"),
-    path('family.html', fam_view.as_view(), name="family"),
-    path('metabolite.html', metabolite_view.as_view(), name="metabolite"),
+    path('metabolo.html', metabolo_view.as_view(), name="metabolite"),
     path('genome/',GenomeView.as_view() ,name='genome'),
     path('genome/',drug_view.as_view() ,name='drug'),
-    path('genome/',fam_view.as_view() ,name='family'),
-    path('genome/',metabolite_view.as_view() ,name='metabolite'),
+    path('genome/',metabolo_view.as_view() ,name='metabolite'),
     path('home/about.html',about_view,name='about'),
     path('home/home.html',home_view,name='home'),
     path('home/genome.html',GenomeView.as_view(),name='genome'),
     path('home/drug.html',drug_view.as_view(),name='drug'),
-    path('home/family.html',fam_view.as_view(),name='family'),
-    path('home/metabolite.html',metabolite_view.as_view(),name='metabolite'),
+    path('home/metabolo.html',metabolo_view.as_view(),name='metabolite'),
 
     path('',home_view)       
 ]

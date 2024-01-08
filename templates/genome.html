@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
   <head>
     {% load static %}
@@ -10,7 +9,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> COLORECTAL CANCER DATABASE </title>
-    <!-- Fontawesome Link for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   </head>
   <style>
@@ -91,10 +89,10 @@ header a:hover, footer a:hover {
 }
 
 .homepage {
-  height: 60vh;
+  height: auto;
   width: 100%;
   position: relative;
-  background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% );
+  background : url('{{ STATIC_URL }}/static/images/bg2.png');
   background-position: center 65%;
   background-size: cover;
   background-attachment: fixed;
@@ -120,7 +118,7 @@ header a:hover, footer a:hover {
 }
 
 .homepage .content h1 {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -149,6 +147,70 @@ header a:hover, footer a:hover {
 }
 
 .content a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.3);
+}
+
+.homepage2 {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+  background-position: center 65%;
+  background-size: cover;
+  background-attachment: fixed;
+  background:#e1eeff;
+}
+
+.homepage2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  
+}
+
+.homepage2 .content2 {
+  display: flex;
+  height: 85%;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepage2 .content2 h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color:black;
+}
+
+.homepage2 .content2 .text {
+  margin-bottom: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content2 a {
+  color: white;
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #fff;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.content2 a:hover {
   color: #fff;
   background: rgba(255,255,255,0.3);
 }
@@ -557,6 +619,7 @@ form {
     max-width: 60vw;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
 
 }
 
@@ -564,10 +627,11 @@ form label {
     font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
     margin-bottom: 12px;
+    border: 2px solid black;
 }
 
 form input {
-    border: 2px solid lightslategray;
+    border: 2px solid black;
     width: 15vw;
     height: 40px;
     border-radius: 3px;
@@ -578,7 +642,7 @@ form input {
 
 form input:focus {
     outline: none;
-    border: 2px solid darkslategray;
+    border: 2px solid black;
 }
 
 @media screen and (max-width: 560px) {
@@ -588,56 +652,71 @@ form input:focus {
   }
 }
 </style>
-  <body>
-    <header>
-      <nav class="navbar">
-        <h2 class="logo"><a href="#">CRCMPDDB</a></h2>
-        <input type="checkbox" id="menu-toggler">
-        <label for="menu-toggler" id="hamburger-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </label>
-        <ul class="all-links">
-          <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction()">Home
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content" id="myDropdown">
-    <a href="about.html">About</a>
-    <a href="stages.html"> Stages</a>
-    <a href="factors.html">Factors</a>
-    <a href="medical.html">Medical Conditions</a>
-    <a href="role.html">Role of Medicinal Plants</a>
-  </div>
+<body>
+  <header>
+    <nav class="navbar">
+      <img style="height: 100px; width: 100px; border-radius:5px; padding: 1rem  1rem; margin-left:1 rem; left: 1rem; " src="{% static 'images/JIIT.png' %}">
+      <h2 class="logo"><a href="home.html">CRCMMDB</a></h2>
+      <input type="checkbox" id="menu-toggler">
+      <label for="menu-toggler" id="hamburger-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </label>
+      <ul class="all-links">
+<div class="dropdown">
+<button class="dropbtn" onclick="myFunction()">Introduction
+  <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content" id="myDropdown">
+  <a href="about.html">About</a>
+  <a href="stages.html"> Stages</a>
+  <a href="factors.html">Factors</a>
+  <a href="medical.html">Medical Conditions</a>
+  <a href="role.html">Role of Medicinal Plants</a>
+</div>
 </div> 
-<li><a href="family.html">CRC Medicinal plant <br> & its basic taxonomy</a></li>
-<li><a href="genome.html">CRC_Genome</a></li>
+<li><a href="home.html">Home</a></li>
+<li><a href="genome.html">Gene & Genome</a></li>
 <li><a href="drug.html">Natural Drugs</a></li>
-<li><a href="metabolite.html">Medicinal plant <br> & its metabolites </a></li>
+<li><a href="metabolo.html">Metabolites </a></li>
 <li><a href="contact.html">Contact Us</a></li>
 </ul>
 </nav>
 </header>
 
-<section class="homepage" id="home">
-  <div class="content">
-    <div class="text">
-      <section class="hero-section" >
-          <div class="content">
-            <h1 >Search GeneID for CRC Genome</h1>
-            <form method="get" class="search-form" >
-              <input style="color:black;" list="magicHouses" id="myHouse" class="text"  type="text" name="q" placeholder="GeneID"/>
-              <input type="submit" value="Search" class="submit">
-              </form>
-                        
-          </div>
-        </div>
-      </section> 
+  <section class="homepage" id="home">
+    <div class="content">
+      <div class="text">     
+        <br>       
+        <h1>Colorectal Cancer Medicinal Plants and Metabolites Database (CRCMMDB)</h1>
+        <br>
+        <p style="font-size: 28px;"><marquee width="90%" direction="left" height="50px" ><u>A comprehensive web medicinal plants and metabolite and drug database for the CRC cancer</u>
+        </marquee></p>
+        
+      </div>
     </div>
-  </div>
   </section>
+
+  <section class="homepage2" id="home">
+    <div class="content2">
+      <div class="text">
+        <section class="hero-section" >
+            <div class="content2">
+              <h1 >Search GeneID for CRC Genome</h1>
+              <form method="get" class="search-form" >
+                <input style="color:black; align:center; justify-content:center; padding: 10px;" list="magicHouses" id="myHouse" class="text"  type="text" name="q" placeholder="GeneID"/>    
+                <input style=" border: 1px solid black; background:white;" type="submit" value="Search" class="submit">
+                </form>
+                    <br><br>      
+            </div>
+          </div>
+        </section> 
+      </div>
+    </div>
+    </section>
+
       <div class="tableContainer">
         <table border="1" class="thelongone">
             <tr>

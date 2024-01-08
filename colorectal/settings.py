@@ -41,10 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'geno',
-    'metabol',
     'NaturalDrug',
-    'fam',
     'phase',
+    'metabolo',
 ]
 
 MIDDLEWARE = [

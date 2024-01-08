@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
   <head>
     {% load static %}
@@ -10,7 +9,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> COLORECTAL CANCER DATABASE </title>
-    <!-- Fontawesome Link for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   </head>
   <style>
@@ -160,6 +158,7 @@ header a:hover, footer a:hover {
   background-position: center 65%;
   background-size: cover;
   background-attachment: fixed;
+  background:#e1eeff;
 }
 
 .homepage2::before {
@@ -643,7 +642,7 @@ form input {
 
 form input:focus {
     outline: none;
-    border: 2px solid darkslategray;
+    border: 2px solid black;
 }
 
 @media screen and (max-width: 560px) {
@@ -666,8 +665,8 @@ form input:focus {
         </svg>
       </label>
       <ul class="all-links">
-        <div class="dropdown">
-<button class="dropbtn" onclick="myFunction()">Home
+<div class="dropdown">
+<button class="dropbtn" onclick="myFunction()">Introduction
   <i class="fa fa-caret-down"></i>
 </button>
 <div class="dropdown-content" id="myDropdown">
@@ -678,10 +677,10 @@ form input:focus {
   <a href="role.html">Role of Medicinal Plants</a>
 </div>
 </div> 
-<li><a href="family.html">Medicinal plant & Taxonomy</a></li>
+<li><a href="home.html">Home</a></li>
 <li><a href="genome.html">Gene & Genome</a></li>
 <li><a href="drug.html">Natural Drugs</a></li>
-<li><a href="metabolite.html">Metabolites </a></li>
+<li><a href="metabolo.html">Metabolites </a></li>
 <li><a href="contact.html">Contact Us</a></li>
 </ul>
 </nav>
@@ -707,16 +706,116 @@ form input:focus {
           <div class="content2">
             <h1 style:"color:white;">Search CRC Natural Drugs</h1>
             <form method="get" class="search-form" >
-              <input style="color:black;" list="magicHouses" id="myHouse" class="text"  type="text" name="q" placeholder="Drug"/>    
-              <input type="submit" value="Search" class="submit">
+              <input style="color:black; align:center; justify-content:center; padding: 10px;" list="magicHouses" id="myHouse" class="text"  type="text" name="q" placeholder="Drug"/> 
+              <datalist id="magicHouses">
+                <option value="3,3'-Diindolylmethane">
+                  <option value="6-Gingerol">
+                  <option value="Allicin">
+                 <option value="Andrographis Paniculata">
+                  <option value="Andrographolide">
+                  <option value="Annonacin">
+                  <option value="Apigenin">
+                  <option value="Arctigenin">
+                  <option value="Artemisinin">
+                  <option value="Artichoke Extract">
+                  <option value="Astaxanthin">
+                  <option value="Astragalus Extract">
+                  <option value="Baicalein">
+                  <option value="Bakuchiol">
+                  <option value="Berberine">
+                  <option value="Beta-glucans">
+                  <option value="Betalains">
+                  <option value="Betulin">
+                  <option value="Betulinic Acid">
+                  <option value="Boswellic Acid">
+                  <option value="Camptothecin">
+                  <option value="Cannabichromene (CBC)">
+                  <option value="Cannabidiol (CBD)">
+                  <option value="Cannabigerol (CBG)">
+                  <option value="Celastrol">
+                  <option value="Celery Seed Extract">
+                  <option value="Chelerythrine">
+                  <option value="Chrysin">
+                  <option value="Cordycepin">
+                  <option value="Cryptotanshinone">
+                  <option value="Curcumin">
+                  <option value="Cyanidin-3-Glucoside">
+                  <option value="Deguelin">
+                  <option value="Diallyl Disulfide">
+                  <option value="Dioscin">
+                  <option value="Diosmetin">
+                  <option value="EGCG (Epigallocatechin gallate)">
+                  <option value="Ellagic Acid">
+                  <option value="Embelin">
+                  <option value="Emodin">
+                  <option value="Epicatechin">
+                  <option value="Epigallocatechin (EGC)">
+                  <option value="Escin">
+                  <option value="Esculin">
+                  <option value="Falcarinol">
+                  <option value="Fisetin">
+                  <option value="Fucoidan">
+                  <option value="Genistein">
+                  <option value="Gingerol">
+                  <option value="Ginkgo Biloba Extract">
+                  <option value="Ginsenoside">
+                  <option value="Gossypol">
+                  <option value="Graviola (Soursop)">
+                  <option value="Green Tea Extract">
+                  <option value="Guggulsterone">
+                  <option value="Hedyotis Diffusa Extract">
+                  <option value="Hesperetin">
+                  <option value="Honokiol">
+                  <option value="Indole-3-carbinol (I3C)">
+                  <option value="Juglone">
+                  <option value="Kaempferol">
+                  <option value="Kaurenoic Acid">
+                  <option value="Limonin">
+                  <option value="Lutein">
+                  <option value="Luteolin">
+                  <option value="Lycopene">
+                  <option value="Myricetin">
+                  <option value="Naringenin">
+                  <option value="Nimbolide">
+                  <option value="Oleanolic Acid">
+                  <option value="Parthenolide">
+                  <option value="Polyphenols">
+                  <option value="Polyphenon E">
+                  <option value="Pomegranate Extract">
+                  <option value="Psoralidin">
+                  <option value="Pterostilbene">
+                  <option value="Pycnogenol">
+                  <option value="Quassinoid Compounds">
+                  <option value="Quercetin">
+                  <option value="Resveratrol">
+                  <option value="Salidroside">
+                  <option value="Sanguinarine">
+                  <option value="Scutellarein">
+                  <option value="Silibinin">
+                  <option value="Silymarin">
+                  <option value="Sophoranol">
+                  <option value="Sophoridine">
+                  <option value="Sulforaphane">
+                  <option value="Taxol (Paclitaxel)">
+                  <option value="Thymoquinone">
+                  <option value="Tomatine">
+                  <option value="Triptolide">
+                  <option value="Triptonide">
+                  <option value="Ursolic Acid">
+                  <option value="Vincristine">
+                  <option value="Withaferin A">
+                  <option value="Withanolides">
+                  <option value="Xanthohumol">
+                  <option value="Piceatannol">
+                </datalist> 
+              <input style=" border: 1px solid black; background:white;" type="submit" value="Search" class="submit">
               </form>
-                        
+                  <br><br>      
           </div>
         </div>
       </section> 
     </div>
   </div>
-  
   </section>
 
   <div class="tableContainer">
@@ -781,5 +880,6 @@ form input:focus {
           }
         }
         </script>
+
   </body>
 </html>
