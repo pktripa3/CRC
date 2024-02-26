@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'NaturalDrug',
     'phase',
     'metabolo',
+    'fda',
 ]
 
 MIDDLEWARE = [

@@ -19,6 +19,7 @@ from django.urls import path
 from geno.views import GenomeView
 from NaturalDrug.views import drug_view
 from metabolo.views import metabolo_view
+from fda.views import Fdaview
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from phase.views import home_view, about_view, contact_view, medical_view, factors_view, role_view, stages_view
 
@@ -34,14 +35,17 @@ urlpatterns = [
     path('genome.html', GenomeView.as_view(), name="genome"),
     path('drug.html', drug_view.as_view(), name="drug"),
     path('metabolo.html', metabolo_view.as_view(), name="metabolite"),
+    path('fda.html', Fdaview.as_view(), name="fda"),
     path('genome/',GenomeView.as_view() ,name='genome'),
     path('genome/',drug_view.as_view() ,name='drug'),
     path('genome/',metabolo_view.as_view() ,name='metabolite'),
+    path('genome/',Fdaview.as_view() ,name='fda'),
     path('home/about.html',about_view,name='about'),
     path('home/home.html',home_view,name='home'),
     path('home/genome.html',GenomeView.as_view(),name='genome'),
     path('home/drug.html',drug_view.as_view(),name='drug'),
     path('home/metabolo.html',metabolo_view.as_view(),name='metabolite'),
+    path('home/fda.html',Fdaview.as_view(),name='fda'),
 
     path('',home_view)       
 ]
